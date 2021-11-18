@@ -1,0 +1,18 @@
+[build] 
+  publish = "public"
+  command = "npm run build"
+
+[dev] 
+  publish = "./public"
+  framework = "eleventy"
+  command = "npm start"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+    
+[[redirects]]
+  from = "/*"
+  to = "/404/index.html"
+  status = 404

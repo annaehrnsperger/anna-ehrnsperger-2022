@@ -1,0 +1,44 @@
+---
+lang: en
+---
+
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {{ pageTitle }}{% if pageTitle %} • {% endif %}{{ general.siteTitle }}
+    </title>
+    <meta name="title" content="{{ general.siteTitle  }}">
+    <meta name="description" content="{{ general.description }}">
+    {% if general.favicon %}      
+      <link rel="icon" type="image/png" href="{{ general.favicon }}"/>
+    {% else %}
+      <link rel="icon" href="data:image"/>
+    {% endif %}
+    {# <link rel="preload" crossorigin as="font" type="font/woff2" href="/assets/fonts/Gellix-Medium.woff2">
+    <link rel="preload" crossorigin as="font" type="font/woff" href="/assets/fonts/Gellix-Regular.woff"> #}
+    {% if general.previewImage %}      
+      <meta property="og:image" content={{ general.previewImage }} />
+      <meta name="twitter:image" content={{ general.previewImage }} />
+    {% endif %}
+    <link rel="stylesheet" href="/index.css">
+  </head>
+  <body>
+    <div id="root">
+      {% include 'components/header.njk' %}
+      {# {% include 'components/cart.njk' %} #}
+
+        <main data-router-wrapper>
+          <div data-router-view="global" data-template="{{ template }}" data-min-height>
+            {{ content | safe }}
+          </div>
+        </main>
+        
+        {% include 'components/footer.njk' %}
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

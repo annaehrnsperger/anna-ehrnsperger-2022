@@ -1,0 +1,7 @@
+{% macro listitem(link, item) %}
+  <td class="py-4 border-b">
+    {% if link %} <a href="{{ link }}"> {% endif %}
+      {{ item }}
+    {% if link %} </a> {% endif %}
+  </td>
+{% endmacro %}

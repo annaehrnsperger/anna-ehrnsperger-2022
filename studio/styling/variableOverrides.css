@@ -1,0 +1,20 @@
+:root {
+  /* Brand colors */
+  --brand-primary: #929292;
+  --brand-primary--inverted: #ffffff;
+  --brand-secondary: #131313;
+  --brand-secondary--inverted: #ffffff;
+
+  /* Main Navigation */
+  --main-navigation-color: var(--brand-secondary);
+  --main-navigation-color--inverted: var(--brand-secondary--inverted);
+}
+
+[data-pressed] {
+  background: var(--brand-primary) !important;
+  color: var(--brand-primary--inverted) !important;
+}
+
+[data-pressed] [data-sanity-icon='chevron-right'] path {
+  stroke: var(--brand-primary--inverted) !important;
+}

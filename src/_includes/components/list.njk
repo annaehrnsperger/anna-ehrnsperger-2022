@@ -1,0 +1,39 @@
+{% from "components/partials/listitem.njk" import listitem with context %}
+
+{% set heads = ['Year', 'Book Name', 'Writer', 'Editor', 'Dimension', 'ISBN Number'] %}
+
+<div data-list>
+  <table class="border-collapse w-full">
+    <thead class="text-left cursor-pointer">
+      <tr class="border-b">
+        {% for head in heads %}
+          <th class="py-4">
+          {{ head }} 
+            <span class="inline-block origin-center" data-arrow>↓</span>
+          </th>
+        {% endfor %}
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for book in list %}
+        <tr>
+
+          {{ listitem(book.link, book.year) }}
+          {{ listitem(book.link, book.name) }}
+          {{ listitem(book.link, book.author) }}
+          {{ listitem(book.link, book.editor) }}
+          {{ listitem(book.link, book.dimension) }}
+          {{ listitem(book.link, book.number) }}
+          <td class="w-0" data-img-row>
+            <figure class="absolute pointer-events-none w-52 h-auto" data-img-overlay>
+              <img src="{{ book.img }}">
+            </figure>
+          </td>
+
+        </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+</div>

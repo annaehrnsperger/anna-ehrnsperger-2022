@@ -1,0 +1,7 @@
+:root {
+  --text: var(--black);
+  --bg: var(--white);
+  --black: #131313;
+  --white: #ffffff;
+  --gray: rgba(238, 238, 238, 0.3);
+}

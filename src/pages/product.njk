@@ -1,0 +1,34 @@
+---
+pagination:
+  data: products
+  size: 1
+  alias: product
+  addAllPagesToCollections: true
+tags: product
+eleventyComputed:
+  pageTitle: "{{ product.title }}"
+template: product
+permalink: "shop/{{ product.handle | slug }}/index.html"
+---
+
+{% set variants = product.variants.edges %}
+
+<h1>{{ product.title }}</h1>
+<figure class="w-96 h-96">
+  {% shopImg product.images.edges[0].node.originalSrc, product.images.edges[0].node.transformedSrc, "Shopify Image" %}
+</figure>
+<p>{{ product.descriptionHtml | safe}}</p>
+
+<select class="bg-primary text-secondary" data-select-variants>
+  {% for variant in variants %}
+    <option value="{{ variant.node.sku }}">
+      {{ variant.node.title }}
+    </option>
+  {% endfor %}
+</select>
+
+<div class="relative h-12">
+  {% for variant in variants %}
+    <button class="bg-secondary text-primary absolute left-0 top-0" data-product-to-cart data-product-variant="{{ variant.node.id }}" data-product-value="{{ variant.node.sku }}">Add to cart</button>
+  {% endfor %}
+</div>

@@ -1,0 +1,21 @@
+{% macro videoplayer(src) %}
+  <div class="relative w-full" data-videoplayer>
+    <video src="{{ src }}" playsinline muted></video>
+    <div class="absolute bottom-0 w-full text-white p-10" data-controls>
+      <div class="flex items-center h-5 cursor-pointer" data-progress>
+        <div class="h-px w-full bg-gray">
+          <div class="group bg-white duration-100 h-px" data-progress-filled>
+            {# <span class="absolute bg-white rounded-full w-1 h-1 scale-0 group-hover:scale-1"/> #}
+          </div>
+        </div>
+      </div>
+      <div data-time>0:00</div>
+      <button data-play-btn type="button">Play</button>
+      <button data-mute-btn type="button">Unmute</button>
+      <button data-fullscreen-btn type="button">Fullscreen</button>
+    </div>
+    <div class="flex absolute items-center justify-center w-full h-full top-0 right-0" data-loading>
+      <span>Loading</span>
+    </div>
+  </div>
+{% endmacro %}

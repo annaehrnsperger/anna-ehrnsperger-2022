@@ -1,0 +1,5 @@
+{
+  "values": ["en", "de"],
+  "naming": ["EN", "DE"],
+  "default": "en"
+}

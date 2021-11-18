@@ -1,0 +1,66 @@
+@import './base/normalize.css';
+@import './base/fonts.css';
+@import './base/variables.css';
+@import './base/customClasses.css';
+
+@import './components/calendar.css';
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/** 
+  * Defaults
+  */
+html {
+  font-size: 10px;
+}
+
+body {
+  @apply font-sans antialiased bg-primary text-secondary text-sm leading-tight;
+}
+
+//TODO
+::selection {
+  background: var(--gray);
+}
+
+figure img,
+video {
+  @apply object-cover w-full h-full;
+}
+
+[data-videoplayer] {
+  height: calc(100% / 16 * 9);
+}
+
+[data-slides] {
+  will-change: transform;
+}
+
+/** 
+  * Typography
+  */
+
+.hl {
+  @apply uppercase tracking-wider;
+}
+
+.subline {
+  @apply font-serif leading-relaxed tracking-normal;
+}
+
+/** 
+  * Layout
+  */
+
+.grid-layout {
+  @apply grid grid-cols-8 md:grid-cols-10 gap-8;
+}
+
+/** 
+  * Additional
+  */
+
+@media (min-width: 768px) {
+}

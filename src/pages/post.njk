@@ -1,0 +1,33 @@
+---
+pagination:
+  data: posts
+  size: 1
+  alias: post
+  addAllPagesToCollections: true
+tags: posts
+eleventyComputed:
+  pageTitle: "{{ post.title }}"
+template: post
+permalink: "blog/{{ post.slug | slug }}/index.html"
+---
+
+
+{# geschlossene, unabhänige, wiederverwendbare Komposition
+z. B. ein Forumsbeitrag, ein Zeitschriften- oder Zeitungsartikel oder ein Blogeintrag. #}
+
+<article>
+  <header>
+    <h1>{{ post.title }}</h1>
+  </header>
+
+  <section></section>
+  <section></section>
+  <section></section>
+
+  <article>
+    <h2></h2>
+    <p></p>
+  </article>
+
+  <footer>Post Footer</footer>
+</article>

@@ -1,0 +1,18 @@
+.day {
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+.day-before,
+.day-after {
+  opacity: 0.5;
+}
+
+.active-day {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.today {
+  border: 1px solid white;
+}

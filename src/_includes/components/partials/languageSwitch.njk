@@ -1,0 +1,17 @@
+{% for lang in langs.values %}
+
+  {# loop through all page urls and set url #}
+  {% set translatedUrl = "/" + lang + "/" %}
+
+  {% for item in collections.all %}
+    {% if item.data.template == template and item.data.locale == lang %}
+      {% set translatedUrl = item.url %}
+    {% endif %}
+  {% endfor %}
+
+  <a href="{{ translatedUrl }}" data-nav-item-{{ lang }}>
+    {{ langs.naming[loop.index0] }}
+  </a>
+  <span>{% if loop.first %}/{% endif %}</span>
+  
+{% endfor %}

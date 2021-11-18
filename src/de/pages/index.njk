@@ -1,0 +1,13 @@
+---
+template: frontpage
+slug: /
+---
+
+<div>
+  {{ frontpage.lang[locale] }}
+  {{ frontpage.description[locale] | richtext | safe  }}
+</div>
+<figure>
+  {% img frontpage.asset %}
+</figure>
+<canvas class="webgl"></canvas>

@@ -1,0 +1,24 @@
+---
+template: frontpage
+slug: /
+---
+
+{% from "components/muxvideo.njk" import muxvideo with context %}
+
+ <ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+<div>
+  {{ frontpage.lang[locale] }}
+  {{ frontpage.description[locale] | richtext | safe  }}
+</div>
+<figure>
+  {% img frontpage.asset %}
+</figure>
+
+<section class="h-screen w-full bg-gray" data-three-container></section>
+
+{{ muxvideo(frontpage.video) }} 

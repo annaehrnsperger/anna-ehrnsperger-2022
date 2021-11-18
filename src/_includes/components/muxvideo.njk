@@ -1,0 +1,20 @@
+{% macro muxvideo(
+  src, 
+  autoplay = true, 
+  playsinline = true, 
+  muted = true, 
+  loop = true
+  ) 
+%}
+  <video
+    {% if autoplay %}autoplay{% endif %}
+    {% if playsinline %}playsinline{% endif %}
+    {% if muted %}muted{% endif %}
+    {% if loop %}loop{% endif %}
+    poster="https://image.mux.com/{{ src }}/thumbnail.jpg"
+    data-mux-video="{{ src }}"
+  />
+{% endmacro %}
+
+{# {% from "components/muxvideo.njk" import muxvideo with context %} #}
+{# {{ muxvideo(frontpage.video) }} #}
