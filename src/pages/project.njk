@@ -1,0 +1,47 @@
+---
+pagination:
+  data: projects
+  size: 1
+  alias: project
+  addAllPagesToCollections: true
+tags: posts
+eleventyComputed:
+  pageTitle: "{{ project.title }}"
+template: project
+permalink: "work/{{ project.slug | slug }}/index.html"
+---
+
+{% from "components/partials/media.njk" import media with context %}
+
+
+<section class="h-screen w-full hl text-white">
+  <figure class="h-screen w-full absolute z-[-1] bg-black">
+    {{ media(project.media.type, project.media.image, project.media.alt, project.media.video) }}
+  </figure>
+
+  <a class="group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
+    <div class="grid grid-cols-12 gap-4 p-8">
+      <h2 class="col-span-12">{{ project.title }}</h2>
+      <p class="col-start-2 col-span-11">visit website</p>
+      {# //TODO #}
+      <p class="group-hover:col-start-2 duration-300 col-span-3">→</p>
+    </div>
+  </a>
+</section>
+
+<article>
+  <header>
+    <h1>{{ post.title }}</h1>
+  </header>
+
+  <section></section>
+  <section></section>
+  <section></section>
+
+  <article>
+    <h2></h2>
+    <p></p>
+  </article>
+
+  <footer>Post Footer</footer>
+</article>

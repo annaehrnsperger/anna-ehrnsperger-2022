@@ -4,6 +4,7 @@ import {
   enableBodyScroll,
   clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { addClass, removeClass, select, selectAll } from '../utils/helper';
 
 export class Nav {
@@ -14,6 +15,7 @@ export class Nav {
     /**
      * Elements
      */
+    this.logo = select('[data-header-logo]');
     this.header = {
       menuBtn: select('[data-menu-btn]', this.container),
       menuLines: selectAll('[data-menu-line]', this.container),
@@ -46,8 +48,24 @@ export class Nav {
   }
 
   init() {
-    // this.setActiveLink();
+    gsap.registerPlugin(ScrollTrigger);
+    setTimeout(() => ScrollTrigger.refresh(), 600);
+
+    this.setHeaderPosition();
+    this.setActiveLink();
     this.events();
+  }
+
+  setHeaderPosition() {
+    gsap.to([this.container, this.logo], {
+      bottom: '33%',
+      color: '#000',
+      scrollTrigger: {
+        scrub: 0.2,
+        start: 100,
+        end: '+=500',
+      },
+    });
   }
 
   setActiveLink() {

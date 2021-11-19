@@ -1,10 +1,9 @@
-{% macro media(type, imageSrc, alt, videoSrc, poster) %}
+{% from "components/muxvideo.njk" import muxvideo with context %}
+
+{% macro media(type, imageSrc, alt, videoSrc) %}
   {% if type === 'image' %}
     {% img imageSrc, alt %}
   {% else %}
-    <video class="group-hover:rounded-[24px] duration-300" src="{{ videoSrc }}" {% if poster %}poster="{{ poster }}"{% endif %} autoplay playsinline muted loop class="pointer-events-none"></video>
+    {{ muxvideo(videoSrc) }}
   {% endif %}
 {% endmacro %}
-
-{# //USE #}
-{# {{ media(obj.media.type, obj.media.image, obj.media.alt, obj.media.video, obj.media.poster) }} #}

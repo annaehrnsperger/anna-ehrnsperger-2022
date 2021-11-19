@@ -1,4 +1,0 @@
-{
-  "layout": "layout.njk",
-  "permalink": "{{ locale }}/{{ subdir }}/{{ slug }}/index.html"
-}

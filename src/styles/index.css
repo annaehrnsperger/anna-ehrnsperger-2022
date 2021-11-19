@@ -17,10 +17,9 @@ html {
 }
 
 body {
-  @apply font-sans antialiased bg-primary text-secondary text-sm leading-tight;
+  @apply font-sans text-base antialiased leading-tight;
 }
 
-//TODO
 ::selection {
   background: var(--gray);
 }
@@ -30,24 +29,12 @@ video {
   @apply object-cover w-full h-full;
 }
 
-[data-videoplayer] {
-  height: calc(100% / 16 * 9);
-}
-
-[data-slides] {
-  will-change: transform;
-}
-
 /** 
   * Typography
   */
 
 .hl {
-  @apply uppercase tracking-wider;
-}
-
-.subline {
-  @apply font-serif leading-relaxed tracking-normal;
+  @apply text-xl leading-small;
 }
 
 /** 

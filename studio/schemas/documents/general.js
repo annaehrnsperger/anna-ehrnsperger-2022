@@ -14,25 +14,6 @@ export default {
   },
   fields: [
     {
-      title: 'Navigation',
-      name: 'navigation',
-      type: 'object',
-      fields: [
-        {
-          name: 'pages',
-          title: 'Pages',
-          type: 'array',
-          of: [
-            {
-              type: 'reference',
-              to: [{ type: 'frontpage' }, { type: 'page' }, { type: 'post' }],
-            },
-          ],
-        },
-      ],
-      options: { collapsible: true, collapsed: false },
-    },
-    {
       title: 'Default SEO',
       name: 'defaultSeo',
       type: 'object',

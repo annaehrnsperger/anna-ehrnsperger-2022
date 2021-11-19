@@ -1,6 +1,6 @@
-# Eleventy Sanity Starter
+# Anna Ehrnsperger
 
-> Starter template with [Sanity](https://sanity.io), [Eleventy](https://11ty.dev), [Tailwind CSS](https://tailwindcss.com/) + [esbuild](https://esbuild.github.io/)
+> Website with [Sanity](https://sanity.io), [Eleventy](https://11ty.dev), [Tailwind CSS](https://tailwindcss.com/) + [esbuild](https://esbuild.github.io/)
 
 ## 💥 Getting Started
 

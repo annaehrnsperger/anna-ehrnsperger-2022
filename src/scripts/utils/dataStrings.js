@@ -13,10 +13,11 @@ const media = `
     type,
     'image': image.image.asset->url,
     'alt': image.alt,
-    'video': video.videoUrl,
-    'poster': video.poster.asset->url,
+    'video': video.asset->playbackId,
   },
-`;
+  `;
 
 module.exports.link = link;
 module.exports.media = media;
+// TODO
+// video.asset->playbackId

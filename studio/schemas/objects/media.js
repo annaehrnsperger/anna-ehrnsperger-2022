@@ -1,4 +1,4 @@
-import { FiFileText } from 'react-icons/fi';
+import { FiFileText, FiTv } from 'react-icons/fi';
 
 export default {
   title: 'Media',
@@ -30,25 +30,17 @@ export default {
       title: 'Video',
       hidden: ({ parent }) => !parent?.type || parent.type !== 'video',
     },
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
-    },
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'image.alt',
+      image: 'image.image.asset',
+      media: 'type',
     },
-    prepare({ title }) {
+    prepare({ title, image, media }) {
       return {
-        title,
-        media: FiFileText,
+        title: media === 'image' ? title : 'Video',
+        media: media === 'image' ? image : FiTv,
       };
     },
   },

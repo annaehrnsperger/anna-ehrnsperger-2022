@@ -32,17 +32,6 @@ function sanityImage(asset, alt="Image") {
     />
   `;
 }
-  
-function shopifyImage(asset, blur, alt="Image") {
-  return `
-  <img
-    class="lazyload"
-    src="${blur}"
-    data-src="${asset}"
-    alt="${alt}"
-  />
-  `;
-}
 
 function filterBlocksToHtml(blocks) {
   const h = blocksToHtml.h
@@ -79,7 +68,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setWatchThrottleWaitTime(500);
   
   eleventyConfig.addShortcode('img', sanityImage);
-  eleventyConfig.addShortcode('shopImg', shopifyImage);
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
   
   eleventyConfig.addFilter('richtext', filterBlocksToHtml);

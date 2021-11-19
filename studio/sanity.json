@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "Eleventy Starter"
-  },
   "api": {
-    "projectId": "n9rmz3ku",
+    "projectId": "lx8z3k6n",
     "dataset": "production"
+  },
+  "project": {
+    "name": "Anna Ehrnsperger"
   },
   "plugins": [
     "@sanity/base",
