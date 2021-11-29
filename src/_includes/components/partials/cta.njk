@@ -1,9 +1,0 @@
-{% macro cta(external, title, src) %}
-  <a href="{% if external === false %}/{% endif %}{{ src }}" 
-    {% if external %} target="_blank" rel="noopener noreferrer" {% endif %}
-  >
-    {{ title }}{% if external %}<span>↗</span>{% endif %}
-  </a>
-{% endmacro %}
-
-{# {% from "components/partials/cta.njk" import cta with context %} #}

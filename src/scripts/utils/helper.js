@@ -1,3 +1,5 @@
+import gsap from 'gsap';
+
 export function select(selector, container = document) {
   return container.querySelector(selector);
 }
@@ -101,5 +103,37 @@ export function loadImages(paths, whenLoaded) {
 
     img.crossOrigin = 'anonymous';
     img.src = `${path}`;
+  });
+}
+
+export function darkMode(duration = 0.2, delay = 0, ease = 'expo.out') {
+  gsap.to(':root', {
+    '--primary': '#000',
+    duration,
+    delay,
+    ease,
+  });
+
+  gsap.to(':root', {
+    '--secondary': '#fff',
+    duration,
+    delay,
+    ease,
+  });
+}
+
+export function lightMode(duration = 0.2, delay = 0, ease = 'expo.out') {
+  gsap.to(':root', {
+    '--primary': '#fff',
+    duration,
+    delay,
+    ease,
+  });
+
+  gsap.to(':root', {
+    '--secondary': '#000',
+    duration,
+    delay,
+    ease,
   });
 }

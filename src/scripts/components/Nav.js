@@ -52,7 +52,6 @@ export class Nav {
     setTimeout(() => ScrollTrigger.refresh(), 600);
 
     this.setHeaderPosition();
-    this.setActiveLink();
     this.events();
   }
 
@@ -65,16 +64,6 @@ export class Nav {
         start: 100,
         end: '+=500',
       },
-    });
-  }
-
-  setActiveLink() {
-    this.header.items.forEach((item) => {
-      if (window.location.pathname.includes(`${item.getAttribute('href')}`)) {
-        addClass(item, 'link-active');
-      } else {
-        removeClass(item, 'link-active');
-      }
     });
   }
 

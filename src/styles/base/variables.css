@@ -1,4 +1,6 @@
 :root {
+  --primary: var(--black);
+  --secondary: var(--white);
   --black: #000000;
   --white: #ffffff;
   --gray: #232323;

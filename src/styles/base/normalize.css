@@ -13,6 +13,7 @@ html {
   height: 100%;
   line-height: 1;
   -webkit-text-size-adjust: 100%;
+  text-underline-offset: 4px;
 }
 
 button,

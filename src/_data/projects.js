@@ -5,10 +5,15 @@ const { media } = require('../scripts/utils/dataStrings');
 module.exports = async function () {
   const projects = await client.fetch(groq`
     *[_type == "project"]{
-      title,
+      ...,
       'slug': slug.current,
       ${media}
-      url
+      medias[]{
+        ...,
+        'image': image.image.asset->url,
+        'alt': image.alt,
+        'video': video.video.asset->playbackId
+      }
     }
   `);
 

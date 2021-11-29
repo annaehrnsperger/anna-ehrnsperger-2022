@@ -13,6 +13,9 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 
 {% from "components/partials/media.njk" import media with context %}
 
+{% set two = [1,2] %}
+{% set three = [1,2,3] %}
+
 
 <section class="h-screen w-full hl text-white">
   <figure class="h-screen w-full absolute z-[-1] bg-black">
@@ -20,21 +23,62 @@ permalink: "work/{{ project.slug | slug }}/index.html"
   </figure>
 
   <a class="group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
-    <div class="grid grid-cols-12 gap-4 p-8">
+    <div class="grid-layout">
       <h2 class="col-span-12">{{ project.title }}</h2>
       <p class="col-start-2 col-span-11">visit website</p>
-      {# //TODO #}
       <p class="group-hover:col-start-2 duration-300 col-span-3">→</p>
     </div>
   </a>
 </section>
+
+<section class="grid-layout">
+  <div class="col-span-1">
+    {% for info in project.infos %}
+      <p>{{ info.what }}</p>
+    {% endfor %}
+  </div>
+  <div class="col-start-2 col-span-1">
+    {% for info in project.infos %}
+      <p>{{ info.item }}</p>
+    {% endfor %}
+  </div>
+  <div class="col-start-5 col-span-5 sol-span-5 text-lg">
+    <p>{{ project.description }}</p>
+  </div>
+</section>
+
+{% if project.grid === 'two' %}
+  
+    <section class="grid-layout p-8">
+      <figure class="col-span-9">
+        {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
+      </figure>
+    </section>
+
+    <section class="grid-layout p-8 pt-0">
+    <p class="col-spa-1">Tech Stack</p>
+      <div class="col-start-2 col-span-2">
+        {% for item in project.tech %}
+          <p>{{ item }}</p>
+        {% endfor %}
+      </div>
+    
+      <figure class="col-start-10 col-span-3">
+        {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
+      </figure>
+    </section>
+
+
+
+{% endif %}
+
 
 <article>
   <header>
     <h1>{{ post.title }}</h1>
   </header>
 
-  <section></section>
+  
   <section></section>
   <section></section>
 

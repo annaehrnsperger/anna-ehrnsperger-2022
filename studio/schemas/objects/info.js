@@ -13,8 +13,7 @@ export default {
     {
       name: 'item',
       title: 'Item',
-      type: 'array',
-      of: [{ type: 'string' }],
+      type: 'string',
     },
   ],
   preview: {

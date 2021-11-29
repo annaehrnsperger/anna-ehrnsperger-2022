@@ -7,7 +7,6 @@ slug: /
 
 
 <section class="relative" data-fp-intro-container>
-
   <div class="bg-black min-h-[130vh] w-full text-2xl text-white tracking-tighter leading-none absolute z-[1]" data-fp-intro>
     {% include "components/partials/introtext.njk" %}
   </div>
@@ -15,34 +14,29 @@ slug: /
   <div class="min-h-[130vh] w-full text-2xl text-black tracking-tighter leading-none absolute inset-0 z-[-1]">
     {% include "components/partials/introtext.njk" %}
   </div>
-
 </section>
 
 
 <section data-fp-content>
 
   {% for project in work.projects | reverse %}
-    <a href="/work/{{ project.slug.current }}" class="grid grid-cols-12 gap-4 px-8 pb-48 {% if loop.first %}pt-48{% endif %}" data-transition="project">
+    <a href="/work/{{ project.slug.current }}" class="project-thumbnail relative grid grid-cols-12 gap-4 px-8 {% if loop.first %}pt-48{% endif %}" data-transition="project">
       <div class="col-start-2 col-span-11">
         <h3 class="translate-y-1">{{ project.type }}</h3>
-        <h4 class="text-lg">{{ project.title }}</h4>
+        <h4 class="subhl">{{ project.title }}</h4>
       </div>
       
-      <figure class="h-[33vw] w-[33vw] bg-black -translate-y-2" data-preview-project>
+      <figure class="relative h-[33vw] {{ "square" if project.previewSize === 'square' }} {{ "sixteen-nine" if project.previewSize === 'sixteentonine' }} {{ "four-three" if project.previewSize === 'fourtothree' }} bg-black -translate-y-2" data-preview-project>
         {{ media(project.media.type, project.media.image, project.media.alt, project.media.video) }}
       </figure>
+
+      <div class="grid grid-cols-12 gap-4 absolute bottom-0 w-full pointer-events-none opacity-0" data-project-more>
+        <div class="col-start-2 col-span-10 hl text-white z-10">more</div>
+        <div class="col-start-1 col-span-10 hl text-white z-10 translate-x-10">→</div>
+      </div>
     </a>
+
+    <div class="h-96"></div>
   {% endfor %}
 
-</section>
-
-
-<section class="min-h-[50vh] bg-black text-white hl group">
-  <a href="mailto:hallo@annaehrnsperger.de">
-    <div class="grid grid-cols-12 gap-4 p-8">
-      <p class="col-span-12">Get in touch</p>
-      <p class="col-start-2 col-span-11">hallo at annaehrnsperger.de</p>
-      <p class="group-hover:col-start-2 col-span-3">→</p>
-    </div>
-  </a>
 </section>

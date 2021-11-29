@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  @apply font-sans text-base antialiased leading-tight;
+  @apply font-sans text-base antialiased leading-tight bg-primary text-secondary;
 }
 
 ::selection {
@@ -37,12 +37,26 @@ video {
   @apply text-xl leading-small;
 }
 
+.subhl {
+  @apply text-lg leading-tighter;
+}
+
 /** 
   * Layout
   */
 
+.project-thumbnail img,
+.project-thumbnail video {
+  transition: opacity 0.15s ease-in-out;
+}
+
+.project-thumbnail:hover img,
+.project-thumbnail:hover video {
+  opacity: 0;
+}
+
 .grid-layout {
-  @apply grid grid-cols-8 md:grid-cols-10 gap-8;
+  @apply grid grid-cols-12 gap-4;
 }
 
 /** 

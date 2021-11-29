@@ -26,17 +26,16 @@ lang: en
     <link rel="stylesheet" href="/index.css">
   </head>
   <body>
-    <div id="root">
-      {% include 'components/header.njk' %}
-      {# {% include 'components/cart.njk' %} #}
+    <div data-router-wrapper>
+      <div id="root" data-router-view="global" data-template="{{ template }}" data-min-height>
+        {% include 'components/header.njk' %}
 
         <main data-router-wrapper>
-          <div data-router-view="global" data-template="{{ template }}" data-min-height>
-            {{ content | safe }}
-          </div>
+          {{ content | safe }}
         </main>
         
         {% include 'components/footer.njk' %}
+      </div>
     </div>
 
     <script type="module" src="/main.js"></script>

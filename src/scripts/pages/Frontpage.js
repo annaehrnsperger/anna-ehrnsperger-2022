@@ -1,7 +1,7 @@
 /* eslint-disable new-cap */
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { select, selectAll } from '../utils/helper';
+import { darkMode, lightMode, select, selectAll } from '../utils/helper';
 import defaultState from '../utils/defaultState';
 
 export class Frontpage {
@@ -12,15 +12,17 @@ export class Frontpage {
     /**
      * Elements
      */
-    this.introContainer = select('[data-fp-intro-container]');
-    this.intro = select('[data-fp-intro]');
-    this.introText = select('[data-fp-intro] div');
     this.content = select('[data-fp-content]');
+    this.projects = selectAll('[data-transition="project"]');
+    this.intro = {
+      container: select('[data-fp-intro-container]'),
+      intro: select('[data-fp-intro]'),
+      textcontainer: select('[data-introtext]'),
+    };
 
     /**
      * State
      */
-    this.state = {};
     this.isMobile = window.innerWidth < defaultState.mobile;
 
     /**
@@ -42,45 +44,43 @@ export class Frontpage {
     gsap.registerPlugin(ScrollTrigger);
     setTimeout(() => ScrollTrigger.refresh(), 600);
 
-    gsap.set('body', { background: '#000' });
-
     this.setIntroContainerHeight();
     this.animateIntro();
     this.events();
   }
 
   setIntroContainerHeight() {
-    gsap.set(this.introContainer, {
-      height: this.introText.offsetHeight + 200,
+    gsap.set(this.intro.container, {
+      height: this.intro.textcontainer.offsetHeight + 200,
     });
   }
 
   animateIntro() {
     ScrollTrigger.create({
-      start: 50,
+      start: 30,
       ease: 'none',
       onEnter: () => {
-        gsap.killTweensOf(this.intro);
+        gsap.killTweensOf(this.intro.intro);
         gsap.killTweensOf('body');
 
-        gsap.to('body', { background: '#fff', duration: 0.3 });
+        lightMode(0.9, 0.2);
 
-        gsap.to(this.intro, {
+        gsap.to(this.intro.intro, {
           clipPath: 'inset(0 0 100% 0)',
           ease: 'expo.inOut',
-          duration: 0.8,
+          duration: 1.2,
         });
       },
       onLeaveBack: () => {
-        gsap.killTweensOf(this.intro);
+        gsap.killTweensOf(this.intro.intro);
         gsap.killTweensOf('body');
 
-        gsap.to('body', { background: '#000', delay: 0.1, duration: 0.3 });
+        darkMode(0.9, 0.2);
 
-        gsap.to(this.intro, {
+        gsap.to(this.intro.intro, {
           clipPath: 'inset(0 0 0% 0)',
           ease: 'expo.out',
-          duration: 0.7,
+          duration: 1.2,
         });
       },
     });
@@ -91,7 +91,27 @@ export class Frontpage {
     this.setIntroContainerHeight();
   }
 
-  events() {}
+  events() {
+    this.projects.forEach((project) => {
+      const more = select('[data-project-more]', project);
+
+      project.addEventListener('mouseenter', () => {
+        gsap.to(more, {
+          autoAlpha: 1,
+          duration: 0.15,
+          ease: 'expo.inOut',
+        });
+      });
+
+      project.addEventListener('mouseleave', () => {
+        gsap.to(more, {
+          autoAlpha: 0,
+          duration: 0.15,
+          ease: 'expo.inOut',
+        });
+      });
+    });
+  }
 
   destroy() {
     setTimeout(() => {

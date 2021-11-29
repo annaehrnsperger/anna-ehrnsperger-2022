@@ -11,6 +11,8 @@ module.exports = {
     },
     colors: {
       transparent: 'transparent',
+      primary: 'var(--primary)',
+      secondary: 'var(--secondary)',
       black: 'var(--black)',
       white: 'var(--white)',
       gray: 'var(--gray)',
@@ -30,6 +32,7 @@ module.exports = {
     lineHeight: {
       none: '0.98',
       small: '1',
+      tighter: '1.15',
       tight: '1.25',
       snug: '1.375',
       normal: '1.5',
