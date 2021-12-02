@@ -36,16 +36,24 @@
   height: 100%;
 }
 
-.sixteen-nine {
-  aspect-ratio: 16 / 9;
-}
-
-.four-three {
-  aspect-ratio: 4 / 3;
-}
-
+.sixteen-nine,
+.four-three,
 .square {
   aspect-ratio: 1;
+}
+
+@media (min-width: 768px) {
+  .sixteen-nine {
+    aspect-ratio: 16 / 9;
+  }
+
+  .four-three {
+    aspect-ratio: 4 / 3;
+  }
+
+  .square {
+    aspect-ratio: 1;
+  }
 }
 
 /* .link,

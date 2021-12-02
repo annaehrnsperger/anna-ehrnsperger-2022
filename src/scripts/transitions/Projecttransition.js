@@ -1,34 +1,47 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
-import { rect, select } from '../utils/helper';
+import { rect, select, size } from '../utils/helper';
 
 export class Projecttransition extends Highway.Transition {
   in({ from, to, done }) {
     window.scrollTo(0, 0);
     from.remove();
-    gsap.to(to, {
-      duration: 0.5,
-      autoAlpha: 1,
-      onComplete: () => {
-        done();
+
+    const introImg = select('[data-intro] img');
+
+    document.body.removeAttribute('style');
+
+    gsap.fromTo(
+      introImg,
+      {
+        autoAlpha: 0,
       },
-    });
+      {
+        duration: 0.3,
+        autoAlpha: 1,
+        ease: 'power4.inOut',
+        onComplete: done,
+      }
+    );
   }
 
-  out({ from, trigger, done }) {
+  out({ trigger, done }) {
     const preview = select('[data-preview-project]', trigger);
     const img = select('[data-preview-project] img', trigger);
+    const more = select('[data-project-more]', trigger);
 
     const { top } = rect(preview);
 
-    gsap.to(img, {
+    gsap.set('body', { overflow: 'hidden' });
+
+    gsap.to([img, more], {
       autoAlpha: 0,
       duration: 0.25,
       ease: 'power4.inOut',
     });
 
     gsap.to(preview, {
-      width: '100vw',
+      width: size().width,
       height: '100vh',
       marginLeft: -20,
       y: top * -1,

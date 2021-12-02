@@ -58,15 +58,6 @@ export default {
       type: 'string',
     },
     {
-      name: 'social',
-      title: 'Social',
-      type: 'array',
-      of: [{ type: 'socialLink' }],
-      options: {
-        canDuplicate: 'social',
-      },
-    },
-    {
       title: 'Disclaimer',
       name: 'disclaimer',
       type: 'portableText',
@@ -84,16 +75,6 @@ export default {
       type: 'string',
       description: 'Do not include years.',
     },
-    //     {
-    //       type: 'color',
-    //       name: 'textColor',
-    //       title: 'Text color',
-    //     },
-    //     {
-    //       type: 'color',
-    //       name: 'bgColor',
-    //       title: 'Background color',
-    //     },
   ],
   preview: {
     select: {

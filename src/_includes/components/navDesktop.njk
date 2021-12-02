@@ -1,9 +1,6 @@
 <nav class="hidden md:block" data-nav-desktop>
   <ul class="flex space-x-4">
-    <li><a class="{{ 'underline' if '/' === page.url }} leading-wide" href="/" data-nav-item>Work</a></li>
-    <li><a class="" href="/stories" data-nav-item>Stories</a></li>
-    <li><a class="" href="/about" data-nav-item>About</a></li>
-    <li class="pl-8"><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="#" target="_blank" rel="noopener noreferrer">Email</a></li>
+    {% include "sections/navContent.njk" %}
   </ul>
 </nav>
+

@@ -1,0 +1,16 @@
+
+{% macro projectintro(second = false) %}
+  {% if not second %}
+    <figure class="h-full w-full absolute z-[-20] bg-black">
+      {{ media(project.media.type, project.media.image, project.media.alt, project.media.video) }}
+    </figure>
+  {% endif %}
+
+  <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
+    <div class="grid-layout p-8">
+      <h2 class="col-span-12">{{ project.title }}</h2>
+      <p class="col-start-2 col-span-11">visit website</p>
+      <p class="group-hover:col-start-2 duration-300 col-span-3">→</p>
+    </div>
+  </a>
+{% endmacro %}

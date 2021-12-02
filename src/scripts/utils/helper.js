@@ -36,6 +36,13 @@ export function append(container, el) {
   container.appendChild(el);
 }
 
+export function size() {
+  const width = document.documentElement.clientWidth;
+  const height = document.documentElement.clientHeight;
+
+  return { width, height };
+}
+
 export function secondsToMinutes(seconds) {
   return `${Math.floor(seconds / 60)}:${`0${Math.floor(seconds % 60)}`.slice(
     -2

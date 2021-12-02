@@ -3,8 +3,6 @@
 @import './base/variables.css';
 @import './base/customClasses.css';
 
-@import './components/calendar.css';
-
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -34,11 +32,11 @@ video {
   */
 
 .hl {
-  @apply text-xl leading-small;
+  @apply text-xl leading-small tracking-tight;
 }
 
 .subhl {
-  @apply text-lg leading-tighter;
+  @apply text-lg leading-tighter tracking-tight;
 }
 
 /** 

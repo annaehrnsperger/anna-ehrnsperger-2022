@@ -7,7 +7,7 @@ slug: /
 
 
 <section class="relative" data-fp-intro-container>
-  <div class="bg-black min-h-[130vh] w-full text-2xl text-white tracking-tighter leading-none absolute z-[1]" data-fp-intro>
+  <div class="bg-black min-h-[130vh] w-full text-2xl text-white tracking-tighter leading-none absolute z-[1]" data-intro>
     {% include "components/partials/introtext.njk" %}
   </div>
 
@@ -18,25 +18,23 @@ slug: /
 
 
 <section data-fp-content>
-
   {% for project in work.projects | reverse %}
-    <a href="/work/{{ project.slug.current }}" class="project-thumbnail relative grid grid-cols-12 gap-4 px-8 {% if loop.first %}pt-48{% endif %}" data-transition="project">
+    <a href="/work/{{ project.slug.current }}" class="project-thumbnail relative grid-layout px-4 md:px-8 {% if loop.first %}pt-48{% endif %}" data-transition="project">
       <div class="col-start-2 col-span-11">
         <h3 class="translate-y-1">{{ project.type }}</h3>
         <h4 class="subhl">{{ project.title }}</h4>
       </div>
       
-      <figure class="relative h-[33vw] {{ "square" if project.previewSize === 'square' }} {{ "sixteen-nine" if project.previewSize === 'sixteentonine' }} {{ "four-three" if project.previewSize === 'fourtothree' }} bg-black -translate-y-2" data-preview-project>
+      <figure class="relative col-span-full md:h-[33vw] {{ "square" if project.previewSize === 'square' }} {{ "sixteen-nine" if project.previewSize === 'sixteentonine' }} {{ "four-three" if project.previewSize === 'fourtothree' }} bg-black -translate-y-2" data-preview-project>
         {{ media(project.media.type, project.media.image, project.media.alt, project.media.video) }}
       </figure>
 
-      <div class="grid grid-cols-12 gap-4 absolute bottom-0 w-full pointer-events-none opacity-0" data-project-more>
+      <div class="grid-layout absolute bottom-0 w-full pointer-events-none opacity-0" data-project-more>
         <div class="col-start-2 col-span-10 hl text-white z-10">more</div>
-        <div class="col-start-1 col-span-10 hl text-white z-10 translate-x-10">→</div>
+        <div class="col-start-1 col-span-10 hl text-white z-10 translate-x-12 -translate-y-4">→</div>
       </div>
     </a>
 
     <div class="h-96"></div>
   {% endfor %}
-
 </section>

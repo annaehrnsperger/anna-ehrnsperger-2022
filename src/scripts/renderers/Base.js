@@ -9,7 +9,9 @@ import { FadeIn } from '../animations/FadeIn';
 import { Frontpage } from '../pages/Frontpage';
 import { Muxvideo } from '../components/Muxvideo';
 import { PixiSketch } from '../components/Pixi';
+import { Intro } from '../components/Intro';
 import { Footer } from '../components/Footer';
+import { ScrollPos } from '../components/ScrollPos';
 
 export class Base extends Highway.Renderer {
   onEnter() {
@@ -21,14 +23,12 @@ export class Base extends Highway.Renderer {
       /**
        * Components
        */
-      selectAll('footer').forEach((muxvideo) => new Footer(muxvideo));
-      selectAll('[data-mux-video]').forEach(
-        (muxvideo) => new Muxvideo(muxvideo)
-      );
-      selectAll('[data-pixi-container]').forEach(
-        (pixi) => new PixiSketch(pixi)
-      );
+      selectAll('footer').forEach((el) => new Footer(el));
+      selectAll('[data-intro]').forEach((el) => new Intro(el));
+      selectAll('[data-mux-video]').forEach((el) => new Muxvideo(el));
+      selectAll('[data-pixi-container]').forEach((el) => new PixiSketch(el));
       new Nav();
+      new ScrollPos();
 
       // /**
       //  * Animations

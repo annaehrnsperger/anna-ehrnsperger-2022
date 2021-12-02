@@ -1,32 +1,29 @@
 ---
 pagination:
-  data: projects
+  data: stories
   size: 1
-  alias: project
+  alias: story
   addAllPagesToCollections: true
-tags: posts
+tags: stories
 eleventyComputed:
-  pageTitle: "{{ project.title }}"
-template: project
-permalink: "work/{{ project.slug | slug }}/index.html"
+  pageTitle: "{{ story.title }}"
+template: story
+permalink: "stories/{{ story.slug | slug }}/index.html"
 ---
 
 {% from "components/partials/media.njk" import media with context %}
 {% from "components/partials/projectintro.njk" import projectintro with context %}
-{% from "components/modules/headline.njk" import headline with context %}
 
 
 {# 
   Intro
   #}
 <section class="relative h-[90vh]">
-  <a class="h-[90vh] w-full absolute inset-0 group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer"></a>
-
-  <div class="h-[130vh] w-full hl text-white absolute z-[-1]" data-intro>
+  <div class="h-[130vh] w-full hl text-white absolute" data-intro>
     {{ projectintro() }}
   </div>
 
-  <div class="h-[130vh] w-full hl text-black absolute inset-0 z-[-2]">
+  <div class="w-full hl text-black absolute inset-0 z-[-2]">
     {{ projectintro(true) }}
   </div>
 </section>
@@ -35,47 +32,42 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 {# 
   Description
   #}
-{{ headline(project.description) }}
-
-<section class="grid-layout p-4 md:p-8 pb-48 md:pb-96">
+<section class="grid-layout p-8 pb-96">
   <div class="col-span-1">
     {% for info in project.infos %}
       <p>{{ info.what }}</p>
     {% endfor %}
   </div>
-
-  <div class="col-start-5 col-span-5">
+  <div class="col-start-2 col-span-1">
     {% for info in project.infos %}
       <p class="whitespace-nowrap">{{ info.item }}</p>
     {% endfor %}
   </div>
+  <div class="col-start-5 col-span-5 sol-span-5 subhl">
+    <p>{{ project.description }}</p>
+  </div>
 </section>
 
-
-{# 
-  Images
-  #}
 {% if project.grid === 'two' %}
   
-    <section class="grid-layout p-4 md:p-8">
+    <section class="grid-layout p-8 ">
       <figure class="col-span-9">
         {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
       </figure>
     </section>
 
-    <section class="grid-layout p-4 md:p-8 pt-0">
-    
-       <p class="col-span-1">Tech Stack</p>
-      <div class="col-start-5 col-span-2">
+    <section class="grid-layout p-8 pt-0">
+    <p class="col-spa-1">Tech Stack</p>
+      <div class="col-start-2 col-span-2">
         {% for item in project.tech %}
           <p>{{ item }}</p>
         {% endfor %}
       </div>
+    
       <figure class="col-start-10 col-span-3">
         {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
       </figure>
     </section>
-
 
 
 

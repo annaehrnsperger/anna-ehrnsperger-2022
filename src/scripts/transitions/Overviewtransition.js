@@ -2,12 +2,12 @@ import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
 import { select } from '../utils/helper';
 
-export class Pagetransition extends Highway.Transition {
+export class Overviewtransition extends Highway.Transition {
   in({ from, to, done }) {
     const whiteCurtain = select('[data-white-curtain]');
     const blackCurtain = select('[data-black-curtain]');
 
-    window.scrollTo(0, 0);
+    window.scrollTo(0, localStorage.getItem('scrollPos'));
     from.remove();
 
     gsap.fromTo(
@@ -17,7 +17,8 @@ export class Pagetransition extends Highway.Transition {
       },
       {
         y: '-100%',
-        duration: 0.6,
+        duration: 0.4,
+        delay: 0.2,
         ease: 'expo.out',
         onComplete: done,
       }
@@ -36,7 +37,7 @@ export class Pagetransition extends Highway.Transition {
     //   }
     // );
 
-    gsap.set([whiteCurtain, blackCurtain], { autoAlpha: 0, delay: 1 });
+    gsap.set([whiteCurtain, blackCurtain], { autoAlpha: 0, delay: 1.6 });
   }
 
   out({ from, done }) {

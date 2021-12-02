@@ -1,7 +1,5 @@
-/* eslint-disable new-cap */
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { darkMode, lightMode, select, selectAll } from '../utils/helper';
+import { darkMode, select, selectAll } from '../utils/helper';
 import defaultState from '../utils/defaultState';
 
 export class Frontpage {
@@ -16,18 +14,13 @@ export class Frontpage {
     this.projects = selectAll('[data-transition="project"]');
     this.intro = {
       container: select('[data-fp-intro-container]'),
-      intro: select('[data-fp-intro]'),
       textcontainer: select('[data-introtext]'),
     };
 
     /**
-     * State
-     */
-    this.isMobile = window.innerWidth < defaultState.mobile;
-
-    /**
      * Events
      */
+    this.trackScrollPos = this.trackScrollPos.bind(this);
     this.resize = this.resize.bind(this);
     this.destroy = this.destroy.bind(this);
 
@@ -36,16 +29,13 @@ export class Frontpage {
      */
     this.init();
 
+    window.addEventListener('scroll', this.trackScrollPos);
     window.addEventListener('resize', this.resize);
     window.addEventListener('leavecomplete', this.destroy);
   }
 
   init() {
-    gsap.registerPlugin(ScrollTrigger);
-    setTimeout(() => ScrollTrigger.refresh(), 600);
-
     this.setIntroContainerHeight();
-    this.animateIntro();
     this.events();
   }
 
@@ -55,39 +45,13 @@ export class Frontpage {
     });
   }
 
-  animateIntro() {
-    ScrollTrigger.create({
-      start: 30,
-      ease: 'none',
-      onEnter: () => {
-        gsap.killTweensOf(this.intro.intro);
-        gsap.killTweensOf('body');
-
-        lightMode(0.9, 0.2);
-
-        gsap.to(this.intro.intro, {
-          clipPath: 'inset(0 0 100% 0)',
-          ease: 'expo.inOut',
-          duration: 1.2,
-        });
-      },
-      onLeaveBack: () => {
-        gsap.killTweensOf(this.intro.intro);
-        gsap.killTweensOf('body');
-
-        darkMode(0.9, 0.2);
-
-        gsap.to(this.intro.intro, {
-          clipPath: 'inset(0 0 0% 0)',
-          ease: 'expo.out',
-          duration: 1.2,
-        });
-      },
-    });
+  trackScrollPos() {
+    localStorage.setItem('scrollPos', window.pageYOffset);
   }
 
   resize() {
-    this.isMobile = window.innerWidth < defaultState.mobile;
+    localStorage.setItem('scrollPos', 0);
+
     this.setIntroContainerHeight();
   }
 
@@ -114,10 +78,8 @@ export class Frontpage {
   }
 
   destroy() {
-    setTimeout(() => {
-      document.body.removeAttribute('style');
-    }, 1000);
-
+    darkMode();
+    window.removeEventListener('scroll', this.trackScrollPos);
     window.removeEventListener('resize', this.resize);
   }
 }

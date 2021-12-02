@@ -1,0 +1,40 @@
+---
+pageTitle: About
+template: about
+slug: about
+---
+
+{% from "components/partials/media.njk" import media with context %}
+{% from "components/modules/headline.njk" import headline with context %}
+{% from "components/modules/textblock.njk" import textblock with context %}
+
+
+<section class="relative h-[70vh]">
+  <div class="bg-black min-h-[130vh] w-full text-2xl text-white tracking-tighter leading-none absolute z-[-1]" data-intro>
+    {% include "sections/aboutintro.njk" %}
+  </div>
+
+  <div class="min-h-[130vh] w-full text-2xl text-black tracking-tighter leading-none absolute inset-0 z-[-2]">
+    {% include "sections/aboutintro.njk" %}
+  </div>
+</section>
+
+
+
+{% for module in about.content %}
+  
+  {% if module._type === 'headline' %}
+    {{ headline(module.headline | richtext | safe ) }}
+  {% endif %}
+
+  {% if module._type === 'textblock' %}
+    {{ textblock(module.title, module.content, module.left) }}
+  {% endif %}
+
+{% endfor %}
+
+
+
+{# <div class="h-96"></div> #}
+
+

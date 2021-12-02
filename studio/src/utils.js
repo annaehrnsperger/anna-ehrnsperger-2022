@@ -1,5 +1,1 @@
-export const pages = [
-  { type: 'frontpage' },
-  { type: 'overviewPage' },
-  { type: 'post' },
-];
+export const modules = [{ type: 'headline' }, { type: 'textblock' }];

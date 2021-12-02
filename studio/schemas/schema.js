@@ -6,27 +6,25 @@ import general from './documents/general';
 import work from './documents/routes/work';
 import project from './documents/routes/project';
 import portableText from './objects/portableText';
-import seo from './objects/seo';
 import mainImage from './objects/mainImage';
 import mainVideo from './objects/mainVideo';
-import socialLink from './objects/socialLink';
 import media from './objects/media';
-import simplePortableText from './objects/simplePortableText';
 import about from './documents/routes/about';
 import post from './documents/routes/post';
 import stories from './documents/routes/stories';
 import info from './objects/info';
+import headline from './objects/modules/headline';
+import textblock from './objects/modules/textblock';
 
 const documents = [general, work, stories, about, project, post];
 const objects = [
-  simplePortableText,
   portableText,
-  seo,
   mainImage,
   mainVideo,
-  socialLink,
   media,
   info,
+  headline,
+  textblock,
 ];
 
 export default createSchema({

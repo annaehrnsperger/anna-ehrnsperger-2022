@@ -1,0 +1,9 @@
+{% macro textblock(title, content, left = false) %}
+  <section class="grid-layout p-4 md:p-8">
+    {% if title %}
+      <p class="col-span-2">{{ title }}</p>
+    {% endif %}
+
+    <div class="col-span-10 {{ "col-start-2 md:col-start-5" if not left }} {{ "col-start-2 md:col-start-5" if left }} col-span-9 md:col-span-3">{{ content | richtext | safe }}</div>
+  </section>
+{% endmacro %}

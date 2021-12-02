@@ -26,6 +26,11 @@ lang: en
     <link rel="stylesheet" href="/index.css">
   </head>
   <body>
+    <div>
+      <div class="h-screen w-full bg-white fixed inset-0 z-30 pointer-events-none translate-y-full opacity-0" data-white-curtain></div>
+      <div class="h-screen w-full bg-black fixed inset-0 z-30 pointer-events-none translate-y-full opacity-0" data-black-curtain></div>
+    </div>
+
     <div data-router-wrapper>
       <div id="root" data-router-view="global" data-template="{{ template }}" data-min-height>
         {% include 'components/header.njk' %}

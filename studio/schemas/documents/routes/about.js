@@ -1,4 +1,5 @@
 import { FiSmile } from 'react-icons/fi';
+import { modules } from '../../../src/utils';
 
 const name = 'about';
 const title = 'About';
@@ -19,19 +20,10 @@ export default {
       title: 'Title',
     },
     {
-      name: 'image',
-      type: 'image',
-      title: 'Image',
-    },
-    {
-      name: 'media',
-      type: 'media',
-      title: 'Media',
-    },
-    {
-      name: 'video',
-      type: 'mux.video',
-      title: 'Video',
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: modules,
     },
   ],
   preview: {

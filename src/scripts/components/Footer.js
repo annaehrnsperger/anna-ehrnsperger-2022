@@ -40,19 +40,20 @@ export class Footer {
     setTimeout(() => ScrollTrigger.refresh(), 1000);
 
     this.animateFooter();
-    this.events();
   }
 
   animateFooter() {
     gsap.to(this.section, {
       clipPath: 'inset(0% 0 0% 0)',
-      ease: 'expo.out',
       duration: 1,
       scrollTrigger: {
+        id: 'footer',
+        scrub: true,
         trigger: this.container,
-        start: 'top 20%',
+        start: 'top center',
+        end: `+=${this.container.offsetHeight / 2}`,
         toggleActions: 'play none none reverse',
-        onLeaveBack: () => {
+        onEnterBack: () => {
           lightMode(0.9);
         },
       },
@@ -63,12 +64,13 @@ export class Footer {
   }
 
   resize() {
-    this.isMobile = window.innerWidth < defaultState.mobile;
+    ScrollTrigger.getById('footer').kill();
+    this.animateFooter();
   }
 
-  events() {}
-
   destroy() {
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
     window.removeEventListener('resize', this.resize);
   }
 }

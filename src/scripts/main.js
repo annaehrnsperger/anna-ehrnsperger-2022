@@ -2,6 +2,7 @@ import Highway from '@dogstudio/highway';
 import { Base } from './renderers/Base';
 import { Pagetransition } from './transitions/Pagetransition';
 import { Projecttransition } from './transitions/Projecttransition';
+import { Overviewtransition } from './transitions/Overviewtransition';
 import { initialLoad } from './utils/initialLoad';
 import { showConsole } from './utils/showConsole';
 
@@ -17,6 +18,7 @@ export const H = new Highway.Core({
     global: Pagetransition,
     contextual: {
       project: Projecttransition,
+      overview: Overviewtransition,
     },
   },
 });
