@@ -21,9 +21,6 @@ module.exports = {
       sans: ['Suisse', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
-      // xs: 'clamp(1.2rem, 2vw, 1.6rem)',
-      // sm: 'clamp(1.2rem, 2vw, 1.8rem)',
-      // TODO
       base: 'clamp(1.6rem, 3vw, 1.8rem)',
       lg: 'clamp(3.4rem, 4vw, 4.5rem)',
       xl: 'clamp(4rem, 7vw, 13rem)',
@@ -47,23 +44,6 @@ module.exports = {
       wider: '0.05em',
       widest: '0.1em',
     },
-    // padding: {
-    //   0: '0px',
-    //   sm: '20px',
-    //   md: '25px',
-    //   lg: '30px',
-    // },
-    // inset: {
-    //   0: '0px',
-    //   sm: '20px',
-    //   md: '25px',
-    //   lg: '30px',
-    // },
-    // gap: {
-    //   sm: '20px',
-    //   md: '25px',
-    //   lg: '30px',
-    // },
     extend: {
       gridTemplateColumns: {
         24: 'repeat(24, minmax(0, 1fr))',
