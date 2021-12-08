@@ -1,6 +1,7 @@
 const blocksToHtml = require('@sanity/block-content-to-html');
 const builder = require("./src/utils/imageUrl");
 const fs = require("fs");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 function sanityImage(asset, alt="Image") {
   const WIDTHS =  [600, 1200, 2400];
@@ -71,6 +72,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
   
   eleventyConfig.addFilter('richtext', filterBlocksToHtml);
+  
+  eleventyConfig.addPlugin(syntaxHighlight);
   
   eleventyConfig.setBrowserSyncConfig({
     notify: true,

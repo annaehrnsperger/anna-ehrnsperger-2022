@@ -1,17 +1,15 @@
-import { FiSidebar } from 'react-icons/fi';
+import { FiSquare } from 'react-icons/fi';
+import { modules } from '../../../src/utils';
 
 const name = 'post';
 const title = 'Post';
-const icon = FiSidebar;
+const icon = FiSquare;
 
 export default {
   type: 'document',
   name,
   title,
   icon,
-  initialValue: {
-    title,
-  },
   fields: [
     {
       name: 'title',
@@ -28,25 +26,25 @@ export default {
       },
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
+      name: 'media',
+      title: 'Media',
+      type: 'media',
     },
     {
       name: 'content',
       title: 'Content',
-      type: 'portableText',
+      type: 'array',
+      of: modules,
     },
   ],
   preview: {
     select: {
       previewTitle: 'title',
-      media: 'mainImage',
     },
-    // prepare() {
-    //   return {
-    //     title,
-    //   };
-    // },
+    prepare({ previewTitle }) {
+      return {
+        title: previewTitle,
+      };
+    },
   },
 };

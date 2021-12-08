@@ -8,23 +8,13 @@ export default {
     {
       title: 'Block',
       type: 'block',
-      styles: [
-        // {title: 'Normal', value: 'normal'},
-        // {title: 'H1', value: 'h1'},
-        // {title: 'H2', value: 'h2'},
-        // {title: 'H3', value: 'h3'},
-        // {title: 'H4', value: 'h4'},
-        // {title: 'Quote', value: 'blockquote'}
-      ],
-      lists: [
-        // {title: 'Bullet', value: 'bullet'},
-        // { title: 'Number', value: 'number' }
-      ],
+      styles: [],
+      lists: [],
       marks: {
         decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
-          // {title: 'Code', value: 'code'}
+          // { title: 'Strong', value: 'strong' },
+          // { title: 'Emphasis', value: 'em' },
+          { title: 'Code', value: 'code' },
         ],
         annotations: [
           {
@@ -37,8 +27,6 @@ export default {
                 name: 'pageSlug',
                 type: 'string',
                 title: 'Slug',
-                description:
-                  "Please use the slug you've already set for the page you want to link.",
               },
             ],
           },
@@ -58,8 +46,5 @@ export default {
         ],
       },
     },
-    // { type: 'file' },
-    // { type: 'image' },
-    // { type: 'text' },
   ],
 };

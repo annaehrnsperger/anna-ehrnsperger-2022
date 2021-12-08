@@ -1,0 +1,11 @@
+{% macro intro(section) %}
+  <section class="relative h-[70vh]">
+    <div class="bg-black min-h-[130vh] w-full text-2xl text-white tracking-tighter leading-none absolute z-[-1]" data-intro>
+       {% include section %}
+    </div>
+
+    <div class="min-h-[130vh] w-full text-2xl text-black tracking-tighter leading-none absolute inset-0 z-[-2]">
+       {% include section %}
+    </div>
+  </section>
+{% endmacro %}

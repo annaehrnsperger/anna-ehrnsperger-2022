@@ -1,18 +1,23 @@
 ---
-pageTitle: About
-template: about
-slug: about
+pagination:
+  data: posts
+  size: 1
+  alias: post
+  addAllPagesToCollections: true
+tags: posts
+eleventyComputed:
+  pageTitle: "{{ post.title }}"
+template: post
+permalink: "stories/{{ post.slug | slug }}/index.html"
 ---
 
-{% from "sections/intro.njk" import intro with context %}
 {% from "components/partials/media.njk" import media with context %}
 {% from "components/modules/headline.njk" import headline with context %}
 {% from "components/modules/textblock.njk" import textblock with context %}
 {% from "components/modules/code.njk" import code with context %}
 
+<h1>{{ post.title }}</h1>
 
-{{ intro("sections/aboutintro.njk") }}
-
-{% for module in about.content %}
+{% for module in post.content %}
   {% include "components/modules.njk" %}
 {% endfor %}

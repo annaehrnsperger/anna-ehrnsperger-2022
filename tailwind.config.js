@@ -21,10 +21,11 @@ module.exports = {
       sans: ['Suisse', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
+      sm: '1.4rem',
       base: 'clamp(1.6rem, 3vw, 1.8rem)',
-      lg: 'clamp(3.4rem, 4vw, 4.5rem)',
-      xl: 'clamp(4rem, 7vw, 13rem)',
-      '2xl': 'clamp(5.5rem, 9vw, 15rem)',
+      lg: 'clamp(3rem, 4vw, 4.5rem)',
+      xl: 'clamp(3rem, 7vw, 13rem)',
+      '2xl': 'clamp(4.6rem, 9vw, 15rem)',
     },
     lineHeight: {
       none: '0.98',

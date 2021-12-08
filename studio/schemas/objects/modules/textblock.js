@@ -15,11 +15,6 @@ export default {
       title: 'Content',
       type: 'portableText',
     },
-    {
-      title: 'Left?',
-      name: 'left',
-      type: 'boolean',
-    },
   ],
   preview: {
     select: {

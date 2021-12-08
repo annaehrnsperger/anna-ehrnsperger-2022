@@ -18,11 +18,14 @@
     "dashboard-widget-netlify",
     "@sanity/color-input",
     "duplicate-array-item",
-    "mux-input"
+    "mux-input",
+    "@sanity/code-input"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [

@@ -3,6 +3,8 @@
 @import './base/variables.css';
 @import './base/customClasses.css';
 
+@import './prism/nord.css';
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -58,8 +60,13 @@ video {
 }
 
 /** 
-  * Additional
+  * Modules
   */
+
+.headline-module div p,
+.textblock-module div p {
+  @apply pb-8;
+}
 
 @media (min-width: 768px) {
 }

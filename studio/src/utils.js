@@ -1,1 +1,6 @@
-export const modules = [{ type: 'headline' }, { type: 'textblock' }];
+export const modules = [
+  { type: 'headline' },
+  { type: 'textblock' },
+  { type: 'media' },
+  { type: 'code' },
+];

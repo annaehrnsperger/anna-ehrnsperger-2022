@@ -53,7 +53,7 @@ export class Nav {
     setTimeout(() => ScrollTrigger.refresh(), 600);
 
     this.setHeaderPosition();
-    this.events();
+    // this.events();
   }
 
   setHeaderPosition() {
@@ -61,6 +61,7 @@ export class Nav {
       bottom: '33%',
       color: '#000',
       scrollTrigger: {
+        trigger: 'body',
         id: 'nav',
         scrub: 0.2,
         start: 100,
@@ -101,7 +102,15 @@ export class Nav {
           ease: 'expo.inOut',
         }
       );
+
+      gsap.set('body', {
+        overflow: 'hidden',
+        position: 'relative',
+        height: '100%',
+      });
+
       disableBodyScroll(this.header.navMobile);
+      disableBodyScroll(this.header.menuBtn);
     }
 
     if (!this.state.isNavOpen) {
@@ -118,7 +127,10 @@ export class Nav {
         ease: 'expo.inOut',
       });
 
+      document.body.removeAttribute('style');
+
       enableBodyScroll(this.header.navMobile);
+      enableBodyScroll(this.header.menuBtn);
     }
   }
 

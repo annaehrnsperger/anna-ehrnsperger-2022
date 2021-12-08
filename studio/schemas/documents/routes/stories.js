@@ -4,18 +4,13 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      title: 'Title',
-    },
-    {
-      name: 'projects',
-      title: 'Projects',
+      name: 'stories',
+      title: 'Stories',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{ type: 'project' }],
+          to: [{ type: 'post' }],
         },
       ],
     },
