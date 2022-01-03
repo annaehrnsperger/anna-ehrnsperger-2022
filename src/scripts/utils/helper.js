@@ -54,21 +54,6 @@ export function isEven(value) {
   return false;
 }
 
-export function wrapSpan(node, index = 0) {
-  if (node.nodeName === '#text') {
-    const text = node.textContent;
-    const s = document.createElement('span');
-
-    s.textContent = text;
-    node.parentElement.insertBefore(s, node.parentElement.childNodes[index]);
-    node.remove();
-  } else {
-    const { length } = node.childNodes;
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < length; i++) wrapSpan(node.childNodes[i], i);
-  }
-}
-
 export function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }

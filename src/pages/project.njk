@@ -4,81 +4,108 @@ pagination:
   size: 1
   alias: project
   addAllPagesToCollections: true
-tags: posts
+tags: projects
 eleventyComputed:
   pageTitle: "{{ project.title }}"
 template: project
 permalink: "work/{{ project.slug | slug }}/index.html"
 ---
 
-{% from "components/partials/media.njk" import media with context %}
-{% from "components/partials/projectintro.njk" import projectintro with context %}
-{% from "components/modules/headline.njk" import headline with context %}
+{% from "partials/media.njk" import media with context %}
+{% from "partials/projectintro.njk" import projectintro with context %}
+{% from "modules/headline.njk" import headline with context %}
+{% from "modules/textblock.njk" import textblock with context %}
 
 
-{# 
-  Intro
-  #}
+
 <section class="relative h-[90vh]">
   <a class="h-[90vh] w-full absolute inset-0 group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer"></a>
 
   <div class="h-[130vh] w-full hl text-white absolute z-[-1]" data-intro>
-    {{ projectintro() }}
+    {{ projectintro(false, project.dark) }}
   </div>
 
   <div class="h-[130vh] w-full hl text-black absolute inset-0 z-[-2]">
-    {{ projectintro(true) }}
+    {{ projectintro(true, project.dark) }}
   </div>
 </section>
 
 
-{# 
-  Description
-  #}
 {{ headline(project.description) }}
 
-<section class="grid-layout p-4 md:p-8 pb-48 md:pb-96">
-  <div class="col-span-1">
-    {% for info in project.infos %}
-      <p>{{ info.what }}</p>
-    {% endfor %}
-  </div>
+<div class="h-16"></div>
 
-  <div class="col-start-5 col-span-5">
-    {% for info in project.infos %}
-      <p class="whitespace-nowrap">{{ info.item }}</p>
-    {% endfor %}
-  </div>
-</section>
+{% for info in project.infos %}
+  {{ textblock(info.title, info.content, true) }}
+{% endfor %}
 
-
-{# 
-  Images
-  #}
 {% if project.grid === 'two' %}
   
-    <section class="grid-layout p-4 md:p-8">
-      <figure class="col-span-9">
-        {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
-      </figure>
-    </section>
+  <section class="grid-layout p-4 md:p-8 md:pt-96">
+    <figure class="col-span-9 bg-black" data-animation="fadein">
+      {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
+    </figure>
+  </section>
 
-    <section class="grid-layout p-4 md:p-8 pt-0">
-    
-       <p class="col-span-1">Tech Stack</p>
-      <div class="col-start-5 col-span-2">
-        {% for item in project.tech %}
-          <p>{{ item }}</p>
-        {% endfor %}
-      </div>
-      <figure class="col-start-10 col-span-3">
-        {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
-      </figure>
-    </section>
+  <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
+    <figure class="col-start-1 col-span-5 bg-black" data-animation="fadein">
+      {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
+    </figure>
+  </section>
+
+  {{ textblock("Tech Stack", project.tech.content, true) }}
+
+{% endif %}
 
 
+{% if project.grid === 'threesmall' %}
+
+  <section class="grid-layout p-4 md:p-8 md:pt-96">
+    <figure class="col-span-6 bg-black" data-animation="fadein">
+      {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
+    </figure>
+
+    <figure class="col-span-12 md:col-start-7 md:col-span-7 bg-black" data-animation="fadein">
+      {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
+    </figure>
+  </section>
+
+  <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
+    {{ textblock("Tech Stack", project.tech.content, true, true) }}
+
+    <figure class="col-span-7 md:col-span-5 bg-black mt-4 md:mt-8" data-animation="fadein">
+      {{ media(project.medias[2].type, project.medias[2].image, project.medias[2].alt, project.medias[2].video) }}
+    </figure>
+  </section>
 
 
 {% endif %}
+
+
+{% if project.grid === 'threelarge' %}
+
+  <section class="grid-layout p-4 md:p-8 md:pt-96">
+    <figure class="col-span-12 bg-black" data-animation="fadein">
+      {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
+    </figure>
+  </section>
+
+  <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
+    <figure class="col-start-6 col-span-7 md:col-start-1 md:col-span-4 bg-black" data-animation="fadein">
+      {{ media(project.medias[2].type, project.medias[2].image, project.medias[2].alt, project.medias[2].video) }}
+    </figure>
+  </section>
+
+  <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
+    <figure class="col-span-12 md:col-span-8 bg-black" data-animation="fadein">
+      {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
+    </figure>
+  </section>
+
+
+  {{ textblock("Tech Stack", project.tech.content, true) }}
+
+{% endif %}
+
 
 <div class="h-96"></div>

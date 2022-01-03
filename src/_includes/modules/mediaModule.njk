@@ -1,0 +1,7 @@
+{% macro mediaModule(module) %}
+  <section class="grid-layout p-4 py-8 md:p-8">
+    <figure class="col-span-10 md:col-start-2 md:col-span-8 lg:col-start-2 lg:col-span-6">
+      {{ media(module.type, module.image, module.alt, module.video) }}
+    </figure>
+  </section>
+{% endmacro %}

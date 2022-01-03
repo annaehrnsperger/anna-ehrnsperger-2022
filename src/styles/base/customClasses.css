@@ -42,7 +42,7 @@
   aspect-ratio: 1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .sixteen-nine {
     aspect-ratio: 16 / 9;
   }
@@ -55,33 +55,3 @@
     aspect-ratio: 1;
   }
 }
-
-/* .link,
-.link-active {
-  position: relative;
-  display: inline-block;
-}
-
-.link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--white);
-}
-
-.link:hover::after {
-  background: var(--back);
-}
-
-.link-active::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--black);
-} */

@@ -35,6 +35,11 @@ export default {
       title: 'URL',
     },
     {
+      title: 'Dark',
+      name: 'dark',
+      type: 'boolean',
+    },
+    {
       title: 'Preview Size',
       name: 'previewSize',
       type: 'string',
@@ -62,13 +67,12 @@ export default {
       name: 'infos',
       title: 'Infos',
       type: 'array',
-      of: [{ type: 'info' }],
+      of: [{ type: 'textblock' }],
     },
     {
       name: 'tech',
       title: 'Tech',
-      type: 'array',
-      of: [{ type: 'string' }],
+      type: 'textblock',
     },
     {
       title: 'Grid',

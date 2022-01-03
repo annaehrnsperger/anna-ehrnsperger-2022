@@ -34,7 +34,7 @@ video {
   */
 
 .hl {
-  @apply text-xl leading-small tracking-tight;
+  @apply text-xl leading-none tracking-tight;
 }
 
 .subhl {
@@ -46,17 +46,34 @@ video {
   */
 
 .project-thumbnail img,
-.project-thumbnail video {
+.project-thumbnail video,
+.story-thumbnail img,
+.story-thumbnail video {
   transition: opacity 0.15s ease-in-out;
 }
 
 .project-thumbnail:hover img,
-.project-thumbnail:hover video {
+.project-thumbnail:hover video,
+.story-thumbnail:hover img,
+.story-thumbnail:hover video {
+  opacity: 0;
+}
+
+.story-media img,
+.story-media video {
   opacity: 0;
 }
 
 .grid-layout {
-  @apply grid grid-cols-12 gap-4;
+  @apply grid grid-cols-12 gap-x-4;
+}
+
+.clone {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: var(--black);
+  color: var(--white);
 }
 
 /** 
@@ -64,9 +81,44 @@ video {
   */
 
 .headline-module div p,
-.textblock-module div p {
+.textblock-module div p,
+.textblock-module ul {
   @apply pb-8;
 }
 
-@media (min-width: 768px) {
+.headline-module div p:last-child,
+.textblock-module div p:last-child {
+  @apply pb-0;
+}
+
+.textblock-module.textblock-module-project p {
+  @apply pb-0;
+}
+
+.textblock-module strong {
+  @apply font-bold;
+}
+
+.textblock-module a {
+  @apply underline;
+}
+
+.textblock-module a:hover {
+  @apply no-underline;
+}
+
+.textblock-module code {
+  @apply bg-lightgray rounded-[3px];
+}
+
+.textblock-module ul li {
+  margin-left: 15px;
+  display: block;
+}
+
+.textblock-module ul li::before {
+  content: '▪';
+  display: inline-block;
+  width: 15px;
+  margin-left: -15px;
 }

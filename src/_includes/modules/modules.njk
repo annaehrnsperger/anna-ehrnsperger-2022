@@ -1,0 +1,21 @@
+{% from "modules/headline.njk" import headline with context %}
+{% from "modules/textblock.njk" import textblock with context %}
+{% from "modules/code.njk" import code with context %}
+{% from "modules/mediaModule.njk" import mediaModule with context %}
+
+
+{% if module._type === 'headline' %}
+  {{ headline(module.headline | richtext | safe ) }}
+{% endif %}
+
+{% if module._type === 'textblock' %}
+  {{ textblock(module.title, module.content) }}
+{% endif %}
+
+{% if module._type === 'code' %}
+  {{ code(module.code, module.language) }}
+{% endif %}
+
+{% if module._type === 'media' %}
+  {{ mediaModule(module) }}
+{% endif %}

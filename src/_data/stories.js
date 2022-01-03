@@ -5,12 +5,9 @@ const client = require('../utils/sanityClient');
 module.exports = async function () {
   const stories = await client.fetch(groq`
     *[_type == "stories"][0]{
-      posts[]->{
+      stories[]->{
+        ...,
         ${media}
-        previewSize,
-        title,
-        type,
-        slug
       }
     }
   `);

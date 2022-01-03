@@ -3,8 +3,7 @@ import 'lazysizes';
 import smoothscroll from 'smoothscroll-polyfill';
 
 import { selectAll } from '../utils/helper';
-import { Styles } from '../pages/Styles';
-import { Nav } from '../components/Nav';
+import { Header } from '../components/Header';
 import { FadeIn } from '../animations/FadeIn';
 import { Frontpage } from '../pages/Frontpage';
 import { Muxvideo } from '../components/Muxvideo';
@@ -12,6 +11,7 @@ import { PixiSketch } from '../components/Pixi';
 import { Intro } from '../components/Intro';
 import { Footer } from '../components/Footer';
 import { ScrollPos } from '../components/ScrollPos';
+import { Story } from '../pages/Story';
 
 export class Base extends Highway.Renderer {
   onEnter() {
@@ -27,21 +27,19 @@ export class Base extends Highway.Renderer {
       selectAll('[data-intro]').forEach((el) => new Intro(el));
       selectAll('[data-mux-video]').forEach((el) => new Muxvideo(el));
       selectAll('[data-pixi-container]').forEach((el) => new PixiSketch(el));
-      new Nav();
+      new Header();
       new ScrollPos();
 
-      // /**
-      //  * Animations
-      //  */
-      // selectAll('[data-animation="fadein"]').forEach(
-      //   (fadein) => new FadeIn({ fadein })
-      // );
+      /**
+       * Animations
+       */
+      selectAll('[data-animation="fadein"]').forEach((el) => new FadeIn(el));
 
-      // /**
-      //  * Pages
-      //  */
-      // new Styles();
+      /**
+       * Pages
+       */
       new Frontpage();
+      new Story();
     }, 100);
   }
 

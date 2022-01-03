@@ -1,13 +1,13 @@
 {% macro code(code, lang) %}
   <section class="code-module grid-layout p-4 py-8 md:p-8">
-    <div class="col-span-10 md:col-start-2 md:col-span-6">
+    <div class="col-span-10 md:col-start-2 md:col-span-8 lg:col-start-2 lg:col-span-6">
       {% if lang === 'javscript' %}
         {% highlight "js" %}
-          {{ code }}
+          {{ code | safe }}
         {% endhighlight %}
       {% else %}
         {% highlight "js" %}
-          {{ code }}
+          {{ code | safe }}
         {% endhighlight %}
       {% endif %}
     </div>

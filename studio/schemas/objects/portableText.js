@@ -9,11 +9,10 @@ export default {
       title: 'Block',
       type: 'block',
       styles: [],
-      lists: [],
+      lists: [{ title: 'Bullet', value: 'bullet' }],
       marks: {
         decorators: [
-          // { title: 'Strong', value: 'strong' },
-          // { title: 'Emphasis', value: 'em' },
+          { title: 'Strong', value: 'strong' },
           { title: 'Code', value: 'code' },
         ],
         annotations: [

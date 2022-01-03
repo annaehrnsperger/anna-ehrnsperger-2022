@@ -36,7 +36,6 @@ export class Intro {
 
   init() {
     gsap.registerPlugin(ScrollTrigger);
-    setTimeout(() => ScrollTrigger.refresh(), 600);
 
     this.animateIntro();
     this.events();

@@ -1,9 +1,13 @@
+{% set nextPost = collections.posts | getNextCollectionItem(page) %}
+{% set firstPost = collections.posts[0] %}
+
+
 {% if template === 'frontpage' or template === 'stories' or template === 'about' %}
   <div class="hl group">
     <a href="mailto:hallo@annaehrnsperger.de">
       <div class="grid-layout p-4 md:p-8">
         <p class="col-span-12">Let's collaborate</p>
-        <p class="col-start-2 col-span-11">hallo at annaehrnsperger.de</p>
+        <p class="col-start-2 col-span-10">hallo at annaehrnsperger.de</p>
         <p class="group-hover:col-start-2 col-span-3">→</p>
       </div>
     </a>
@@ -14,6 +18,14 @@
   <a class="hl group grid-layout p-4 md:p-8" href="/" data-transition="overview">
     <p class="col-span-12">Project</p>
     <p class="col-start-2 col-span-11">overview</p>
+    <p class="group-hover:col-start-2 col-span-3">→</p>
+  </a>
+{% endif %}
+
+{% if template === 'story' %}
+  <a class="hl group grid-layout p-4 md:p-8" href="{{ nextPost.url if nextPost | length !== 0 }} {{ firstPost.url if nextPost | length === 0 }}">
+    <p class="col-span-12">Next</p>
+    <p class="col-start-2 col-span-11">story</p>
     <p class="group-hover:col-start-2 col-span-3">→</p>
   </a>
 {% endif %}

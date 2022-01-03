@@ -5,53 +5,21 @@ slug: stories
 ---
 
 {% from "sections/intro.njk" import intro with context %}
-{% from "components/partials/media.njk" import media with context %}
+{% from "partials/media.njk" import media with context %}
 
 
 {{ intro("sections/storiesintro.njk") }}
 
-
-
 <section>
-
-<a href="" class="grid-layout p-8 text-secondary">
-  <figure class="col-start-1 bg-secondary">
-    {# {{ media(project.media.type, project.media.image, project.media.alt, project.media.video) }} #}
-  </figure>
-
-  <h3 class="hl col-start-2 col-span-11">This is a story name</h3>
-</a>
-
-<div class="h-96"></div>
-
-<a href="" class="grid-layout p-8 text-secondary">
-  <figure class="col-start-1 bg-secondary">
-    {# {{ media(project.media.type, project.media.image, project.media.alt, project.media.video) }} #}
-  </figure>
-
-  <h3 class="hl col-start-2 col-span-11">This is a story name</h3>
-</a>
-
-<div class="h-96"></div>
-
-
-  {# {% for story in stories.stories | reverse %}
-    <a href="/work/{{ project.slug.current }}" class="project-thumbnail relative grid grid-cols-12 gap-4 px-8 {% if loop.first %}pt-48{% endif %}" data-transition="project">
-      <div class="col-start-2 col-span-11">
-        <h3 class="translate-y-1">{{ project.type }}</h3>
-        <h4 class="subhl">{{ project.title }}</h4>
-      </div>
-      
-      <figure class="relative h-[33vw] {{ "square" if project.previewSize === 'square' }} {{ "sixteen-nine" if project.previewSize === 'sixteentonine' }} {{ "four-three" if project.previewSize === 'fourtothree' }} bg-black -translate-y-2" data-preview-project>
-        {{ media(project.media.type, project.media.image, project.media.alt, project.media.video) }}
+  {% for story in stories.stories | reverse %}
+    <a href="/stories/{{ story.slug.current }}" class="story-thumbnail grid-layout p-8 text-secondary" data-transition="story">
+      <figure class="col-start-1 col-span-1 bg-secondary square" data-preview-storyimg>
+        {{ media(story.media.type, story.media.image, story.media.alt, story.media.video) }}
       </figure>
 
-      <div class="grid grid-cols-12 gap-4 absolute bottom-0 w-full pointer-events-none opacity-0" data-project-more>
-        <div class="col-start-2 col-span-10 hl text-white z-10">more</div>
-        <div class="col-start-1 col-span-10 hl text-white z-10 translate-x-10">→</div>
-      </div>
+      <h3 class="hl col-start-2 col-span-8">{{ story.title }}</h3>
     </a>
 
-  {% endfor %} #}
-
+    <div class="h-24 md:h-44 lg:h-96"></div>
+  {% endfor %}
 </section>

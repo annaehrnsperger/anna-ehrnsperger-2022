@@ -1,75 +1,23 @@
 import Highway from '@dogstudio/highway';
-import gsap from 'gsap';
+import gsap from 'gsap/all';
 import { select } from '../utils/helper';
+import { inAnim, outAnim } from './Pagetransition';
 
 export class Overviewtransition extends Highway.Transition {
   in({ from, to, done }) {
-    const whiteCurtain = select('[data-white-curtain]');
-    const blackCurtain = select('[data-black-curtain]');
-
     window.scrollTo(0, localStorage.getItem('scrollPos'));
     from.remove();
 
-    gsap.fromTo(
-      [blackCurtain, whiteCurtain],
-      {
-        y: 0,
-      },
-      {
-        y: '-100%',
-        duration: 0.4,
-        delay: 0.2,
-        ease: 'expo.out',
-        onComplete: done,
-      }
-    );
+    const footer = select('[data-footer-white-section]');
 
-    // gsap.fromTo(
-    //   whiteCurtain,
-    //   {
-    //     y: 0,
-    //   },
-    //   {
-    //     y: '-100%',
-    //     delay: 0.2,
-    //     duration: 0.9,
-    //     ease: 'expo.inOut',
-    //   }
-    // );
-
-    gsap.set([whiteCurtain, blackCurtain], { autoAlpha: 0, delay: 1.6 });
+    gsap.to(['body', footer], { background: '#fff', duration: 0.1 });
+    inAnim(to, done, true);
   }
 
   out({ from, done }) {
-    const whiteCurtain = select('[data-white-curtain]');
-    const blackCurtain = select('[data-black-curtain]');
+    const footer = select('[data-footer-white-section]');
 
-    gsap.set([whiteCurtain, blackCurtain], { autoAlpha: 1 });
-
-    gsap.fromTo(
-      whiteCurtain,
-      {
-        y: '100%',
-      },
-      {
-        y: 0,
-        duration: 0.9,
-        ease: 'expo.inOut',
-      }
-    );
-
-    gsap.fromTo(
-      blackCurtain,
-      {
-        y: '100%',
-      },
-      {
-        y: 0,
-        delay: 0.2,
-        duration: 0.9,
-        ease: 'expo.inOut',
-        onComplete: done,
-      }
-    );
+    gsap.to(['body', footer], { background: '#000', duration: 0.1 });
+    outAnim(from, done, true);
   }
 }

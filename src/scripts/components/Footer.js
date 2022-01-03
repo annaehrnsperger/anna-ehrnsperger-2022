@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { darkMode, lightMode, select, selectAll } from '../utils/helper';
+import { darkMode, lightMode, select } from '../utils/helper';
 import defaultState from '../utils/defaultState';
 
 export class Footer {
@@ -16,7 +16,6 @@ export class Footer {
     /**
      * State
      */
-    this.state = {};
     this.isMobile = window.innerWidth < defaultState.mobile;
 
     /**
@@ -36,8 +35,6 @@ export class Footer {
 
   init() {
     gsap.registerPlugin(ScrollTrigger);
-    // TODO
-    setTimeout(() => ScrollTrigger.refresh(), 1000);
 
     this.animateFooter();
   }

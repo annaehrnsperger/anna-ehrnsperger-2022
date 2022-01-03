@@ -1,9 +1,0 @@
-{% macro textblock(title, content) %}
-  <section class="textblock-module grid-layout p-4 md:p-8">
-    {% if title %}
-      <p class="col-span-2">{{ title }}</p>
-    {% endif %}
-
-    <div class="col-start-2 col-span-10 md:col-start-5 md:col-span-3">{{ content | richtext | safe }}</div>
-  </section>
-{% endmacro %}

@@ -6,11 +6,8 @@ module.exports = async function () {
   const work = await client.fetch(groq`
     *[_type == "work"][0]{
       projects[]->{
+        ...,
         ${media}
-        previewSize,
-        title,
-        type,
-        slug
       }
     }
   `);

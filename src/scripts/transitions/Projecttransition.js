@@ -8,11 +8,12 @@ export class Projecttransition extends Highway.Transition {
     from.remove();
 
     const introImg = select('[data-intro] img');
+    const introVideo = select('[data-intro] video');
 
     document.body.removeAttribute('style');
 
     gsap.fromTo(
-      introImg,
+      introImg || introVideo,
       {
         autoAlpha: 0,
       },
@@ -28,13 +29,14 @@ export class Projecttransition extends Highway.Transition {
   out({ trigger, done }) {
     const preview = select('[data-preview-project]', trigger);
     const img = select('[data-preview-project] img', trigger);
+    const video = select('[data-preview-project] video', trigger);
     const more = select('[data-project-more]', trigger);
 
     const { top } = rect(preview);
 
     gsap.set('body', { overflow: 'hidden' });
 
-    gsap.to([img, more], {
+    gsap.to([img || video, more], {
       autoAlpha: 0,
       duration: 0.25,
       ease: 'power4.inOut',

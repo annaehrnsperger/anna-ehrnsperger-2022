@@ -3,12 +3,7 @@ import { Base } from './renderers/Base';
 import { Pagetransition } from './transitions/Pagetransition';
 import { Projecttransition } from './transitions/Projecttransition';
 import { Overviewtransition } from './transitions/Overviewtransition';
-import { initialLoad } from './utils/initialLoad';
-import { showConsole } from './utils/showConsole';
-
-// Import Renderers
-
-// Import Transitions
+import { Storytransition } from './transitions/Storytransition';
 
 export const H = new Highway.Core({
   renderers: {
@@ -19,17 +14,11 @@ export const H = new Highway.Core({
     contextual: {
       project: Projecttransition,
       overview: Overviewtransition,
+      story: Storytransition,
     },
   },
 });
 
-/**
- * Components
- */
-showConsole();
-initialLoad();
-
-// TODO
-// window.addEventListener('beforeunload', () => {
-//   localStorage.removeItem('');
-// });
+window.addEventListener('beforeunload', () => {
+  localStorage.removeItem('theme');
+});

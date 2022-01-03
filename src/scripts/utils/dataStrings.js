@@ -8,17 +8,19 @@ const link = `
   },
 `;
 
+const mediaContent = `
+  ...,
+  'image': image.image.asset->url,
+  'alt': image.alt,
+  'video': video.video.asset->playbackId,
+`;
+
 const media = `
   media{
-    ...,
-    'image': image.image.asset->url,
-    'alt': image.alt,
-    'video': video.video.asset->playbackId,
+    ${mediaContent}
   },
   `;
 
 module.exports.link = link;
+module.exports.mediaContent = mediaContent;
 module.exports.media = media;
-
-// TODO
-// video.asset->playbackId

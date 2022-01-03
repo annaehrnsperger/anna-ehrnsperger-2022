@@ -7,6 +7,13 @@ module.exports = async function () {
     *[_type == "post"]{
       ...,
       'slug': slug.current,
+      ${media}
+      content[]{
+        ...,
+        'image': image.image.asset->url,
+        'alt': image.alt,
+        'video': video.video.asset->playbackId
+      }
     }
   `);
 
