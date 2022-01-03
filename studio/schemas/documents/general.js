@@ -48,32 +48,19 @@ export default {
       options: { collapsible: true, collapsed: false },
     },
     {
-      title: 'Email',
-      name: 'email',
-      type: 'string',
-    },
-    {
-      title: 'Phone',
-      name: 'phone',
-      type: 'string',
+      title: 'Address',
+      name: 'address',
+      type: 'portableText',
     },
     {
       title: 'Disclaimer',
       name: 'disclaimer',
       type: 'portableText',
-      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Privacy Policy',
       name: 'privacyPolicy',
       type: 'portableText',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Copyright',
-      name: 'copyright',
-      type: 'string',
-      description: 'Do not include years.',
     },
   ],
   preview: {

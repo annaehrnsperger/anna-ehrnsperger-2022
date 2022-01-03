@@ -2,7 +2,7 @@
 {% set firstPost = collections.posts[0] %}
 
 
-{% if template === 'frontpage' or template === 'stories' or template === 'about' %}
+{% if template === 'frontpage' or template === 'stories' or template === 'about' or template === 'disclaimer' %}
   <div class="hl group">
     <a href="mailto:hallo@annaehrnsperger.de">
       <div class="grid-layout p-4 md:p-8">
@@ -33,20 +33,17 @@
 
 <div class="grid-layout p-4 md:p-8">
   <div class="col-span-10 md:col-span-2">
-    <p><a href="">Anna Ehrnsperger</a></p>
+    <p>Anna Ehrnsperger</p>
   </div>
 
   <div class="col-start-2 col-span-10 md:col-start-5 md:col-span-3">
-      <div class="flex flex-col pb-16">
-        <p><a href="">Instagram</a></p>
-        <p><a href="">Twitter</a></p>
-        <p><a href="">Email</a></p>
-      </div>
-
-      <div class="flex text-sm space-x-4">
-        <p>©{% year %}</p>
-        <p><a href="">Disclaimer</a></p>
-        <p><a href="">Privacy Policy</a></p>
-      </div>
+    <div class="flex space-x-8 pb-8">
+      <p><a href="https://www.instagram.com/annaehrnsperger/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+      <p><a href="https://twitter.com/annaehrnsperger" target="_blank" rel="noopener noreferrer">Twitter</a></p>
+      <p><a href="https://github.com/annaehrnsperger" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      <p><a href="mailto:hallo@annaehrnsperger.de">Email</a></p>
     </div>
+
+    <a class="text-sm" href="/disclaimer">©{% year %} Disclaimer & Privacy Policy</a>
+  </div>
 </div>

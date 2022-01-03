@@ -22,7 +22,7 @@ slug: /
     <a href="/work/{{ project.slug.current }}" class="project-thumbnail relative grid-layout px-4 md:px-8 {% if loop.first %}pt-48{% endif %}" data-transition="project">
       <div class="col-start-2 col-span-11">
         <h3 class="pb-[1px] md:pb-0 md:translate-y-1">{{ project.type }}</h3>
-        <h4 class="pb-1 md:pb-4 subhl">{{ project.title }}</h4>
+        <h4 class="pb-4 subhl">{{ project.title }}</h4>
       </div>
       
       <figure class="relative col-span-full h-[80.5vw] md:h-[33vw] {{ "square" if project.previewSize === 'square' }} {{ "sixteen-nine" if project.previewSize === 'sixteentonine' }} {{ "four-three" if project.previewSize === 'fourtothree' }} bg-black -translate-y-2" data-preview-project>

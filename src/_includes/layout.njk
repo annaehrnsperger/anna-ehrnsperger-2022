@@ -37,7 +37,9 @@ lang: en
           {{ content | safe }}
         </main>
         
-        {% include 'components/footer.njk' %}
+        {% if template !== 'notfound' %}
+          {% include 'components/footer.njk' %}
+        {% endif %}
       </div>
     </div>
 

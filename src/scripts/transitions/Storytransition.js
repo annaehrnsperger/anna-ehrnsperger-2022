@@ -44,28 +44,16 @@ export class Storytransition extends Highway.Transition {
       ease: 'expo.inOut',
     });
 
-    // gsap.to([img, more], {
-    //   autoAlpha: 0,
-    //   duration: 0.25,
-    //   ease: 'power4.inOut',
-    // });
-
     gsap.to(img, {
-      y: trigger.offsetHeight,
+      y: trigger.offsetHeight - 20,
       duration: 0.5,
       ease: 'power4.inOut',
     });
 
     gsap.to(trigger, {
-      // width: size().width,
-      // height: '100vh',
-      // marginLeft: -20,
-      // position: 'absolute',
-      // zIndex: 100,
       y: top * -1,
       duration: 0.5,
       ease: 'power4.inOut',
-      // delay: 0.2,
       onComplete: done,
     });
   }

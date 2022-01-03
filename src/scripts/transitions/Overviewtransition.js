@@ -4,20 +4,22 @@ import { select } from '../utils/helper';
 import { inAnim, outAnim } from './Pagetransition';
 
 export class Overviewtransition extends Highway.Transition {
-  in({ from, to, done }) {
-    window.scrollTo(0, localStorage.getItem('scrollPos'));
+  in({ from, done }) {
+    setTimeout(() => {
+      window.scrollTo(0, localStorage.getItem('scrollPos'));
+    }, 200);
     from.remove();
 
     const footer = select('[data-footer-white-section]');
 
     gsap.to(['body', footer], { background: '#fff', duration: 0.1 });
-    inAnim(to, done, true);
+    inAnim(done, true, true);
   }
 
-  out({ from, done }) {
+  out({ done }) {
     const footer = select('[data-footer-white-section]');
 
     gsap.to(['body', footer], { background: '#000', duration: 0.1 });
-    outAnim(from, done, true);
+    outAnim(done, true, true);
   }
 }

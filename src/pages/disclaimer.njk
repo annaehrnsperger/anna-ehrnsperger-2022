@@ -1,0 +1,17 @@
+---
+pageTitle: Disclaimer
+template: disclaimer
+slug: disclaimer
+---
+
+{% from "sections/intro.njk" import intro with context %}
+{% from "modules/textblock.njk" import textblock with context %}
+
+
+{{ intro("sections/disclaimerintro.njk") }}
+
+{{ textblock("", general.address) }}
+{{ textblock("Disclaimer", general.disclaimer) }}
+{{ textblock("Privacy Policy", general.privacyPolicy) }}
+
+<div class="h-96"></div>

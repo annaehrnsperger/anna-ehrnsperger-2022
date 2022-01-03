@@ -20,5 +20,5 @@ export const H = new Highway.Core({
 });
 
 window.addEventListener('beforeunload', () => {
-  localStorage.removeItem('theme');
+  localStorage.removeItem('scrollPos');
 });

@@ -1,7 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { darkMode, lightMode, select, selectAll } from '../utils/helper';
-import defaultState from '../utils/defaultState';
+import { darkMode, lightMode } from '../utils/helper';
 
 export class Intro {
   constructor(el) {
@@ -9,20 +8,8 @@ export class Intro {
     if (!this.container) return;
 
     /**
-     * Elements
-     */
-    this.template = select('[data-template]');
-
-    /**
-     * State
-     */
-    this.state = {};
-    this.isMobile = window.innerWidth < defaultState.mobile;
-
-    /**
      * Events
      */
-    this.resize = this.resize.bind(this);
     this.destroy = this.destroy.bind(this);
 
     /**
@@ -30,15 +17,14 @@ export class Intro {
      */
     this.init();
 
-    window.addEventListener('resize', this.resize);
     window.addEventListener('leavecomplete', this.destroy);
   }
 
   init() {
     gsap.registerPlugin(ScrollTrigger);
+    setTimeout(() => ScrollTrigger.refresh(), 600);
 
     this.animateIntro();
-    this.events();
   }
 
   animateIntro() {
@@ -71,24 +57,6 @@ export class Intro {
       },
     });
   }
-
-  setThings() {}
-
-  setActiveThing() {}
-
-  toggleTheThing() {}
-
-  sendThing() {}
-
-  updateThing() {}
-
-  onMoveThing() {}
-
-  resize() {
-    this.isMobile = window.innerWidth < defaultState.mobile;
-  }
-
-  events() {}
 
   destroy() {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

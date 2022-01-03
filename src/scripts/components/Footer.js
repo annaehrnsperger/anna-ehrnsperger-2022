@@ -35,6 +35,7 @@ export class Footer {
 
   init() {
     gsap.registerPlugin(ScrollTrigger);
+    setTimeout(() => ScrollTrigger.refresh(), 600);
 
     this.animateFooter();
   }
@@ -51,6 +52,9 @@ export class Footer {
         end: `+=${this.container.offsetHeight / 2}`,
         toggleActions: 'play none none reverse',
         onEnterBack: () => {
+          lightMode(0.9);
+        },
+        onLeaveBack: () => {
           lightMode(0.9);
         },
       },

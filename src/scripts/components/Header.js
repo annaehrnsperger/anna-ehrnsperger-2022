@@ -10,6 +10,7 @@ export class Header {
     /**
      * Elements
      */
+    this.template = select('[data-template]');
     this.footer = select('footer');
 
     /**
@@ -34,8 +35,7 @@ export class Header {
 
   init() {
     gsap.registerPlugin(ScrollTrigger);
-    // TODO
-    // setTimeout(() => ScrollTrigger.refresh(), 600);
+    setTimeout(() => ScrollTrigger.refresh(), 600);
 
     this.setHeaderPosition();
     this.setFooterColor();
@@ -51,12 +51,6 @@ export class Header {
         scrub: 0.2,
         start: 100,
         end: '+=500',
-        onEnter: () => {
-          localStorage.setItem('theme', 'light');
-        },
-        onLeaveBack: () => {
-          localStorage.setItem('theme', 'dark');
-        },
       },
     });
   }

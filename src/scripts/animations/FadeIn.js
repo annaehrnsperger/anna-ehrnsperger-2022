@@ -49,9 +49,7 @@ export class FadeIn {
       scrollTrigger: {
         trigger: this.container,
         start: 'top 70%',
-        // end: 'bottom 30%',
         toggleActions: 'play reverse play reverse',
-        markers: true,
       },
       autoAlpha: 1,
       duration: this.duration,

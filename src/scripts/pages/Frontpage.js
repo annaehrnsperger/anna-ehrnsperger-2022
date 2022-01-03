@@ -1,6 +1,5 @@
 import gsap from 'gsap';
 import { darkMode, select, selectAll } from '../utils/helper';
-import defaultState from '../utils/defaultState';
 
 export class Frontpage {
   constructor() {
@@ -79,6 +78,7 @@ export class Frontpage {
 
   destroy() {
     darkMode();
+
     window.removeEventListener('scroll', this.trackScrollPos);
     window.removeEventListener('resize', this.resize);
   }
