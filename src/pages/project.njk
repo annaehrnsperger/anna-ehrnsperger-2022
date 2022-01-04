@@ -61,11 +61,11 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 {% if project.grid === 'threesmall' %}
 
   <section class="grid-layout p-4 md:p-8 md:pt-96">
-    <figure class="col-span-6 bg-black" data-animation="fadein">
+    <figure class="col-span-12 md:col-span-6 bg-black" data-animation="fadein">
       {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
     </figure>
 
-    <figure class="col-span-12 md:col-start-7 md:col-span-7 bg-black" data-animation="fadein">
+    <figure class="col-span-12 md:col-start-7 md:col-span-6 bg-black" data-animation="fadein">
       {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
     </figure>
   </section>
@@ -92,13 +92,13 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 
   <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
     <figure class="col-start-6 col-span-7 md:col-start-1 md:col-span-4 bg-black" data-animation="fadein">
-      {{ media(project.medias[2].type, project.medias[2].image, project.medias[2].alt, project.medias[2].video) }}
+      {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
     </figure>
   </section>
 
   <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
     <figure class="col-span-12 md:col-span-8 bg-black" data-animation="fadein">
-      {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
+      {{ media(project.medias[2].type, project.medias[2].image, project.medias[2].alt, project.medias[2].video) }}
     </figure>
   </section>
 

@@ -95,15 +95,15 @@ video {
   @apply pb-0;
 }
 
-.textblock-module strong {
-  @apply font-bold;
+strong {
+  @apply font-bold font-normal;
 }
 
-.textblock-module a {
+article a {
   @apply underline;
 }
 
-.textblock-module a:hover {
+article a:hover {
   @apply no-underline;
 }
 

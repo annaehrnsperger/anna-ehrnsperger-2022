@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { rect, select, size } from '../utils/helper';
 
 export class Projecttransition extends Highway.Transition {
-  in({ from, to, done }) {
+  in({ from, done }) {
     window.scrollTo(0, 0);
     from.remove();
 

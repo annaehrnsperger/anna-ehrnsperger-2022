@@ -23,7 +23,11 @@ permalink: "stories/{{ post.slug | slug }}/index.html"
     </figure>
   </section>
 
-  {% for module in post.content %}
-    {% include "modules/modules.njk" %}
-  {% endfor %}
+  <section class="opacity-0" data-story-content>
+    {% for module in post.content %}
+      {% include "modules/modules.njk" %}
+    {% endfor %}
+  </section>
+
+  <div class="h-96"></div>
 </article>

@@ -26,11 +26,6 @@ export default {
       },
     },
     {
-      name: 'date',
-      title: 'Date',
-      type: 'date',
-    },
-    {
       name: 'media',
       title: 'Media',
       type: 'media',

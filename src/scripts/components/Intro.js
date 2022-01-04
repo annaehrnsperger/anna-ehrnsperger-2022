@@ -1,11 +1,16 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { darkMode, lightMode } from '../utils/helper';
+import { darkMode, lightMode, select } from '../utils/helper';
 
 export class Intro {
   constructor(el) {
     this.container = el;
     if (!this.container) return;
+
+    /**
+     * Elements
+     */
+    this.template = select('[data-template]');
 
     /**
      * Events
@@ -28,6 +33,8 @@ export class Intro {
   }
 
   animateIntro() {
+    const isStory = this.template.dataset.template === 'story';
+
     ScrollTrigger.create({
       start: 30,
       ease: 'none',
@@ -36,6 +43,8 @@ export class Intro {
         gsap.killTweensOf('body');
 
         lightMode(0.9, 0.2);
+
+        if (isStory) return;
 
         gsap.to(this.container, {
           clipPath: 'inset(0 0 100% 0)',
@@ -48,6 +57,8 @@ export class Intro {
         gsap.killTweensOf('body');
 
         darkMode(0.6, 0.2);
+
+        if (isStory) return;
 
         gsap.to(this.container, {
           clipPath: 'inset(0 0 0% 0)',

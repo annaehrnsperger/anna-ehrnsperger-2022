@@ -12,7 +12,7 @@ export class Muxvideo {
   }
 
   init() {
-    const src = `https://stream.mux.com/${this.container.dataset.muxVideoplayer}.m3u8`;
+    const src = `https://stream.mux.com/${this.container.dataset.muxVideo}.m3u8`;
 
     if (this.container.canPlayType('application/vnd.apple.mpegurl')) {
       this.container.src = src;

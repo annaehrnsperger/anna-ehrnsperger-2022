@@ -1,12 +1,16 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { select } from '../utils/helper';
+import { select, selectAll } from '../utils/helper';
 
 export class Story {
   constructor() {
     this.template = select('[data-template]');
     if (this.template.dataset.template !== 'story') return;
 
+    /**
+     * Elements
+     */
+    this.sections = select('[data-story-content]');
     /**
      * Events
      */
@@ -24,6 +28,7 @@ export class Story {
     gsap.registerPlugin(ScrollTrigger);
 
     this.animateMedia();
+    this.animateContent();
   }
 
   animateMedia() {
@@ -49,6 +54,15 @@ export class Story {
           height: '80.5vw',
         });
       },
+    });
+  }
+
+  animateContent() {
+    gsap.to(this.sections, {
+      autoAlpha: 1,
+      delay: 0.45,
+      ease: 'power4.out',
+      duration: 0.3,
     });
   }
 

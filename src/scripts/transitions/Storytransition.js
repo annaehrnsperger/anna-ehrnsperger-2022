@@ -7,16 +7,14 @@ export class Storytransition extends Highway.Transition {
     window.scrollTo(0, 0);
     from.remove();
 
-    const introImg = select('[data-intro] img');
-
     document.body.removeAttribute('style');
 
-    // gsap.set({
-    //   duration: 0.3,
-    //   autoAlpha: 1,
-    //   ease: 'power4.inOut',
-    //   onComplete: done,
-    // });
+    gsap.to(to, {
+      duration: 0.3,
+      autoAlpha: 1,
+      ease: 'power4.inOut',
+      onComplete: done,
+    });
   }
 
   out({ trigger, done }) {

@@ -5,6 +5,8 @@ import { inAnim, outAnim } from './Pagetransition';
 
 export class Overviewtransition extends Highway.Transition {
   in({ from, done }) {
+    window.scrollTo(0, 0);
+
     setTimeout(() => {
       window.scrollTo(0, localStorage.getItem('scrollPos'));
     }, 200);
