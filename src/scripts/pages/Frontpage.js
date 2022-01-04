@@ -9,6 +9,7 @@ export class Frontpage {
     /**
      * Elements
      */
+    this.workBtn = select('[data-nav-work]');
     this.content = select('[data-fp-content]');
     this.projects = selectAll('[data-transition="project"]');
     this.intro = {
@@ -54,7 +55,14 @@ export class Frontpage {
     this.setIntroContainerHeight();
   }
 
+  handleScrollDown(e) {
+    e.preventDefault();
+    window.scrollTo({ left: 0, top: window.innerHeight, behavior: 'smooth' });
+  }
+
   events() {
+    this.workBtn.addEventListener('click', this.handleScrollDown);
+
     this.projects.forEach((project) => {
       const more = select('[data-project-more]', project);
 
@@ -79,6 +87,7 @@ export class Frontpage {
   destroy() {
     darkMode();
 
+    this.workBtn.removeEventListener('click', this.handleScrollDown);
     window.removeEventListener('scroll', this.trackScrollPos);
     window.removeEventListener('resize', this.resize);
   }

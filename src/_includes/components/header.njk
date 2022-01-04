@@ -1,9 +1,9 @@
 <header class="flex justify-end fixed {{ "text-black" if template === 'story' }} text-white w-full p-4 md:p-8 bottom-0 z-[3] pointer-events-none">
   <nav class="block" data-nav>
     <ul class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-4 text-left md:text-justify pointer-events-auto">
-      <li><a class="{{ 'underline' if '/' === page.url }} {{ 'underline' if '/work' in page.url }} hover:underline" href="/" data-nav-item>Work</a></li>
-      <li><a class="{{ 'underline' if '/stories' in page.url }} hover:underline" href="/stories" data-nav-item>Stories</a></li>
-      <li><a class="{{ 'underline' if '/about' in page.url }} hover:underline" href="/about" data-nav-item>About</a></li>
+      <li><a class="{{ 'underline' if '/' === page.url }} {{ 'underline' if '/work' in page.url }} hover:underline" href="/" data-nav-work>Work</a></li>
+      <li><a class="{{ 'underline' if '/stories' in page.url }} hover:underline" href="/stories">Stories</a></li>
+      <li><a class="{{ 'underline' if '/about' in page.url }} hover:underline" href="/about">About</a></li>
       <li class="pl-8 hidden lg:block hover:underline"><a href="https://www.instagram.com/annaehrnsperger/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
       <li class="hidden lg:block hover:underline"><a href="mailto:hallo@annaehrnsperger.de">Email</a></li>
     </ul>
