@@ -25,7 +25,7 @@ slug: /
         <h4 class="pb-4 subhl">{{ project.title }}</h4>
       </div>
       
-      <figure class="relative col-span-full h-[80.5vw] md:h-[33vw] {{ "square" if project.previewSize === 'square' }} {{ "sixteen-nine" if project.previewSize === 'sixteentonine' }} {{ "four-three" if project.previewSize === 'fourtothree' }} bg-black -translate-y-2" data-preview-project>
+      <figure class="relative col-span-full h-[80.5vw] md:h-[33vw] media-left media-scaled overflow-hidden {{ "square" if project.previewSize === 'square' }} {{ "sixteen-nine" if project.previewSize === 'sixteentonine' }} {{ "four-three" if project.previewSize === 'fourtothree' }} bg-black -translate-y-2" data-preview-project>
         {{ media(project.media.type, project.media.image, project.media.alt, project.media.video) }}
       </figure>
 
@@ -35,6 +35,6 @@ slug: /
       </div>
     </a>
 
-    <div class="h-96"></div>
+    <div class="h-44 md:h-96"></div>
   {% endfor %}
 </section>

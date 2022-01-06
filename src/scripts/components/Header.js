@@ -38,13 +38,12 @@ export class Header {
     setTimeout(() => ScrollTrigger.refresh(), 600);
 
     this.setHeaderPosition();
-    this.setFooterColor();
+    this.setColor();
   }
 
   setHeaderPosition() {
     gsap.to(this.container, {
       top: '66%',
-      color: '#000',
       scrollTrigger: {
         trigger: 'body',
         id: 'nav',
@@ -55,21 +54,34 @@ export class Header {
     });
   }
 
-  setFooterColor() {
-    gsap.to(this.container, {
-      color: '#fff',
-      duration: 0.2,
-      scrollTrigger: {
-        trigger: this.footer,
-        start: 'center 80%',
-        toggleActions: 'play none none reverse',
-      },
+  setColor() {
+    const isStory = this.template.dataset.template === 'story';
+
+    const updateValues = () => {
+      if (
+        ScrollTrigger.isInViewport(this.footer, 0.7) ||
+        (window.scrollY < 100 && !isStory)
+      ) {
+        gsap.to(this.container, {
+          color: '#fff',
+          duration: 0.1,
+        });
+      } else {
+        gsap.to(this.container, {
+          color: '#000',
+          duration: 0.1,
+        });
+      }
+    };
+
+    ScrollTrigger.create({
+      start: 0,
+      end: 'max',
+      onUpdate: updateValues,
     });
   }
 
   destroy() {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
-    localStorage.removeItem('theme');
   }
 }

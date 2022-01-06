@@ -21,6 +21,7 @@ export class Storytransition extends Highway.Transition {
     const links = selectAll('[data-transition]');
     const intro = select('main > section');
     const img = select('[data-preview-storyimg]', trigger);
+    const hl = select('h3', trigger);
 
     const { top } = rect(trigger);
 
@@ -43,7 +44,7 @@ export class Storytransition extends Highway.Transition {
     });
 
     gsap.to(img, {
-      y: trigger.offsetHeight - 20,
+      y: hl.offsetHeight,
       duration: 0.5,
       ease: 'power4.inOut',
     });

@@ -29,6 +29,16 @@ video {
   @apply object-cover w-full h-full;
 }
 
+.media-left img,
+.media-left video {
+  @apply object-left;
+}
+
+.media-scaled img,
+.media-scaled video {
+  @apply scale-[1.01];
+}
+
 /** 
   * Typography
   */

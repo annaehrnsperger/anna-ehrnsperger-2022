@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { select, selectAll } from '../utils/helper';
+import { darkMode, select, selectAll } from '../utils/helper';
 
 export class Story {
   constructor() {

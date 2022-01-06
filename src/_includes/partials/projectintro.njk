@@ -1,12 +1,12 @@
-{% macro projectintro(second = false, dark = false) %}
+{% macro projectintro(second = false) %}
   {% if not second %}
-    <figure class="h-screen w-full absolute z-[-20] bg-black">
+    <figure class="media-left p-4 sm:p-0 h-auto w-full sm:h-1/3 sm:w-auto absolute z-[-20] bg-black -translate-x-1/2 -translate-y-3/4 top-1/2 left-1/2 aspect-[3/4] sm:aspect-video">
       {{ media(project.media.type, project.media.image, project.media.alt, project.media.video) }}
     </figure>
   {% endif %}
 
   <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
-    <div class="grid-layout p-8 {{ "text-black" if dark }}">
+    <div class="grid-layout p-8">
       <div class="absolute inset-0 h-1/2 z-[-1]"></div>
       <h2 class="col-span-12">{{ project.title }}</h2>
       <p class="col-start-2 col-span-11">visit website</p>

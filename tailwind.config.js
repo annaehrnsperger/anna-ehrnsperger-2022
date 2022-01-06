@@ -26,9 +26,9 @@ module.exports = {
     fontSize: {
       sm: '1.4rem',
       base: 'clamp(1.6rem, 3vw, 1.8rem)',
-      lg: 'clamp(3rem, 4vw, 4.5rem)',
-      xl: 'clamp(3rem, 7vw, 12rem)',
-      '2xl': 'clamp(4.6rem, 9vw, 15rem)',
+      lg: 'clamp(3rem, 4vw, 4rem)',
+      xl: 'clamp(3rem, 7vw, 10.5rem)',
+      '2xl': 'clamp(4.6rem, 9vw, 13.5rem)',
     },
     lineHeight: {
       none: '0.98',

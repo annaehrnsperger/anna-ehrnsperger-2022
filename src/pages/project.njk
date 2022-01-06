@@ -21,12 +21,12 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 <section class="relative h-[90vh]">
   <a class="h-[90vh] w-full absolute inset-0 group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer"></a>
 
-  <div class="h-[130vh] w-full hl text-white absolute z-[-1]" data-intro>
-    {{ projectintro(false, project.dark) }}
+  <div class="h-[130vh] w-full hl text-white bg-black absolute z-[-1]" data-intro>
+    {{ projectintro(false) }}
   </div>
 
-  <div class="h-[130vh] w-full hl text-black absolute inset-0 z-[-2]">
-    {{ projectintro(true, project.dark) }}
+  <div class="h-[130vh] w-full hl text-black bg-white absolute inset-0 z-[-2]">
+    {{ projectintro(true) }}
   </div>
 </section>
 
@@ -42,13 +42,13 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 {% if project.grid === 'two' %}
   
   <section class="grid-layout p-4 md:p-8 md:pt-96">
-    <figure class="col-span-9 bg-black" data-animation="fadein">
+    <figure class="col-span-12 md:col-span-9 bg-black" data-animation="fadein">
       {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
     </figure>
   </section>
 
   <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
-    <figure class="col-start-1 col-span-5 bg-black" data-animation="fadein">
+    <figure class="col-span-10 md:col-span-5 bg-black" data-animation="fadein">
       {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
     </figure>
   </section>
@@ -91,7 +91,7 @@ permalink: "work/{{ project.slug | slug }}/index.html"
   </section>
 
   <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
-    <figure class="col-start-6 col-span-7 md:col-start-1 md:col-span-4 bg-black" data-animation="fadein">
+    <figure class="col-span-7 md:col-start-1 md:col-span-4 bg-black" data-animation="fadein">
       {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
     </figure>
   </section>

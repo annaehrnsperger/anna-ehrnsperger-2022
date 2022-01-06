@@ -35,11 +35,6 @@ export default {
       title: 'URL',
     },
     {
-      title: 'Dark',
-      name: 'dark',
-      type: 'boolean',
-    },
-    {
       title: 'Preview Size',
       name: 'previewSize',
       type: 'string',

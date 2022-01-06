@@ -12,15 +12,13 @@ slug: stories
 
 <section>
   {% for story in stories.stories | reverse %}
-    <a href="/stories/{{ story.slug.current }}" class="story-thumbnail grid-layout p-8 text-secondary" data-transition="story">
-      <figure class="col-start-1 col-span-1 bg-secondary square" data-preview-storyimg>
+    <a href="/stories/{{ story.slug.current }}" class="story-thumbnail grid-layout p-4 md:p-8 text-secondary pb-12 sm:pb-24 md:pb-36 lg:pb-56" data-transition="story">
+      <figure class="col-start-1 col-span-1 bg-secondary square md:-translate-y-6" data-preview-storyimg>
         {{ media(story.media.type, story.media.image, story.media.alt, story.media.video) }}
       </figure>
 
-      <h3 class="hl col-start-2 col-span-11 w-[80%] lg:w-[70%]">{{ story.title }}</h3>
+      <h3 class="hl col-start-2 col-span-11 w-[80%] lg:w-[70%] pb-8">{{ story.title }}</h3>
     </a>
-
-    <div class="h-24 md:h-44 lg:h-96"></div>
   {% endfor %}
 
   <div class="h-44"></div>

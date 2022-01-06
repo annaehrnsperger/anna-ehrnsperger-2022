@@ -54,9 +54,6 @@ export class Footer {
         onEnterBack: () => {
           lightMode(0.9);
         },
-        onLeaveBack: () => {
-          lightMode(0.9);
-        },
       },
       onComplete: () => {
         darkMode(0.3);

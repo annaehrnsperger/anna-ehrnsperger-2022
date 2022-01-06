@@ -4,6 +4,7 @@ import { Pagetransition } from './transitions/Pagetransition';
 import { Projecttransition } from './transitions/Projecttransition';
 import { Overviewtransition } from './transitions/Overviewtransition';
 import { Storytransition } from './transitions/Storytransition';
+import { showConsole } from './utils/showConsole';
 
 export const H = new Highway.Core({
   renderers: {
@@ -18,6 +19,11 @@ export const H = new Highway.Core({
     },
   },
 });
+
+/**
+ * Components
+ */
+showConsole();
 
 window.addEventListener('beforeunload', () => {
   localStorage.removeItem('scrollPos');
