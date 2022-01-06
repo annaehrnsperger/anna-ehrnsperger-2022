@@ -1,11 +1,11 @@
 {% macro textblock(title, content, project = false, threesmall = false) %}
-  {% if not threesmall %}<section class="textblock-module grid-layout p-4 md:p-12 {{ "md:py-0 textblock-module-project" if project }}">{% endif %}
+  {% if not threesmall %}<section class="textblock-module grid-layout p-4 py-8 md:p-8 {{ "md:py-0 textblock-module-project" if project }}">{% endif %}
     {% if title %}
-      <p class="pb-4 md:pb-0 col-span-5 md:col-span-2">{{ title }}</p>
+      <p class="pb-4 md:pb-0 col-span-6 md:col-span-2">{{ title }}</p>
     {% endif %}
 
     {% if content %}
-      <div class="col-start-2 col-span-10 md:col-start-5 md:col-span-5 lg:col-start-5 lg:col-span-3">{{ content | richtext | safe }}</div>
+      <div class="col-start-2 col-span-9 md:col-start-5 md:col-span-5 lg:col-start-5 lg:col-span-3">{{ content | richtext | safe }}</div>
     {% endif %}
   {% if not threesmall %}</section>{% endif %}
 {% endmacro %}

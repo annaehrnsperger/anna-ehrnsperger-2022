@@ -15,7 +15,7 @@ permalink: "stories/{{ post.slug | slug }}/index.html"
 
 
 <article class="bg-white text-black">
-  <section class="grid-layout p-4 md:p-8 md:pb-32" data-intro>
+  <section class="grid-layout p-4 md:p-8 pb-32" data-intro>
     <h1 class="hl col-start-2 col-span-11 w-[80%] lg:w-[70%] pb-8">{{ post.title }}</h1>
 
     <figure class="story-media col-span-1 square bg-black" data-story-media>
@@ -23,11 +23,9 @@ permalink: "stories/{{ post.slug | slug }}/index.html"
     </figure>
   </section>
 
-  <section class="opacity-0" data-story-content>
+  <section class="opacity-0 pb-44 md:pb-96" data-story-content>
     {% for module in post.content %}
       {% include "modules/modules.njk" %}
     {% endfor %}
   </section>
-
-  <div class="h-96"></div>
 </article>

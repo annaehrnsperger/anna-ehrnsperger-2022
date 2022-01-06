@@ -78,14 +78,6 @@ video {
   @apply grid grid-cols-12 gap-x-4;
 }
 
-.clone {
-  position: absolute;
-  inset: 0;
-  z-index: 100;
-  background: var(--black);
-  color: var(--white);
-}
-
 /** 
   * Modules
   */
@@ -109,11 +101,13 @@ strong {
   @apply font-bold font-normal;
 }
 
-article a {
+article a,
+p a {
   @apply underline;
 }
 
-article a:hover {
+article a:hover,
+p a:hover {
   @apply no-underline;
 }
 
