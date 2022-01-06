@@ -25,18 +25,13 @@ body {
 }
 
 figure img,
-video {
-  @apply object-cover w-full h-full;
+figure video {
+  @apply object-cover w-full h-full scale-[1.01];
 }
 
 .media-left img,
 .media-left video {
   @apply object-left;
-}
-
-.media-scaled img,
-.media-scaled video {
-  @apply scale-[1.01];
 }
 
 /** 
@@ -116,13 +111,24 @@ p a:hover {
 }
 
 .textblock-module ul li {
-  margin-left: 15px;
+  margin-left: 30px;
   display: block;
 }
 
 .textblock-module ul li::before {
   content: '▪';
   display: inline-block;
-  width: 15px;
-  margin-left: -15px;
+  width: 30px;
+  margin-left: -30px;
+}
+
+@media (min-width: 900px) {
+  .textblock-module ul li {
+    margin-left: 15px;
+  }
+
+  .textblock-module ul li::before {
+    width: 15px;
+    margin-left: -15px;
+  }
 }

@@ -19,7 +19,7 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 
 
 <section class="relative h-[90vh]">
-  <a class="h-[90vh] w-full absolute inset-0 group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer"></a>
+  <a class="h-[90vh] w-full absolute inset-0 group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer" aria-label="visit website"></a>
 
   <div class="h-[130vh] w-full hl text-white bg-black absolute z-[-1]" data-intro>
     {{ projectintro(false) }}
@@ -36,7 +36,7 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 <div class="h-16"></div>
 
 {% for info in project.infos %}
-  {{ textblock(info.title, info.content, true) }}
+  {{ textblock(info.title, info.content, true, false, true) }}
 {% endfor %}
 
 {% if project.grid === 'two' %}
@@ -108,4 +108,4 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 {% endif %}
 
 
-<div class="h-96"></div>
+<div class="h-44 md:h-96"></div>

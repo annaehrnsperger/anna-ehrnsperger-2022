@@ -45,6 +45,9 @@ export class Story {
       '(min-width: 900px)': function () {
         gsap.to(media, {
           height: '33vw',
+          width: '33vw',
+          ease: 'power4.out',
+          duration: 0.6,
         });
       },
 
@@ -52,6 +55,9 @@ export class Story {
       '(max-width: 899px)': function () {
         gsap.to(media, {
           height: '80.5vw',
+          width: '80.5vw',
+          ease: 'power4.out',
+          duration: 0.6,
         });
       },
     });
@@ -60,7 +66,7 @@ export class Story {
   animateContent() {
     gsap.to(this.sections, {
       autoAlpha: 1,
-      delay: 0.45,
+      delay: 0.4,
       ease: 'power4.out',
       duration: 0.3,
     });

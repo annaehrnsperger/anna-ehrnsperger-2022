@@ -10,7 +10,6 @@ export class Frontpage {
      * Elements
      */
     this.workBtn = select('[data-nav-work]');
-    this.content = select('[data-fp-content]');
     this.projects = selectAll('[data-transition="project"]');
     this.intro = {
       container: select('[data-fp-intro-container]'),
@@ -35,14 +34,7 @@ export class Frontpage {
   }
 
   init() {
-    this.setIntroContainerHeight();
     this.events();
-  }
-
-  setIntroContainerHeight() {
-    gsap.set(this.intro.container, {
-      height: this.intro.textcontainer.offsetHeight + 200,
-    });
   }
 
   trackScrollPos() {
@@ -51,8 +43,6 @@ export class Frontpage {
 
   resize() {
     localStorage.setItem('scrollPos', 0);
-
-    this.setIntroContainerHeight();
   }
 
   handleScrollDown(e) {
