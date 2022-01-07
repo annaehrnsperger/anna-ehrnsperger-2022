@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  @apply font-sans text-base antialiased leading-tight bg-primary text-secondary;
+  @apply font-semi text-base antialiased leading-tight bg-primary text-secondary;
 }
 
 ::selection {
@@ -39,11 +39,11 @@ figure video {
   */
 
 .hl {
-  @apply text-xl leading-none tracking-tight;
+  @apply font-sans text-xl leading-none tracking-tight;
 }
 
 .subhl {
-  @apply text-lg leading-tighter tracking-tight;
+  @apply font-sans text-lg leading-tighter tracking-tight;
 }
 
 /** 
@@ -57,8 +57,8 @@ figure video {
   transition: opacity 0.15s ease-in-out;
 }
 
-.project-thumbnail:hover img,
-.project-thumbnail:hover video,
+.project-thumbnail figure:hover img,
+.project-thumbnail figure:hover video,
 .story-thumbnail:hover img,
 .story-thumbnail:hover video {
   opacity: 0;
@@ -99,6 +99,10 @@ strong {
 article a,
 p a {
   @apply underline;
+}
+
+footer p a {
+  @apply no-underline;
 }
 
 article a:hover,

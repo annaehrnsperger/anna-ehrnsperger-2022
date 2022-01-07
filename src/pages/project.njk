@@ -19,7 +19,7 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 
 
 <section class="relative h-[90vh]">
-  <a class="h-[90vh] w-full absolute inset-0 group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer" aria-label="visit website"></a>
+  <a class="h-[90vh] w-full absolute inset-0 group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer" aria-label="visit website" data-visit-website></a>
 
   <div class="h-[130vh] w-full hl text-white bg-black absolute z-[-1]" data-intro>
     {{ projectintro(false) }}
@@ -42,13 +42,13 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 {% if project.grid === 'two' %}
   
   <section class="grid-layout p-4 md:p-8 md:pt-96">
-    <figure class="col-span-12 md:col-span-9 bg-black" data-animation="fadein">
+    <figure class="col-span-12 md:col-span-9 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
     </figure>
   </section>
 
   <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
-    <figure class="col-span-10 md:col-span-5 bg-black" data-animation="fadein">
+    <figure class="col-span-10 md:col-span-5 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
     </figure>
   </section>
@@ -61,11 +61,11 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 {% if project.grid === 'threesmall' %}
 
   <section class="grid-layout p-4 md:p-8 md:pt-96">
-    <figure class="col-span-12 md:col-span-6 bg-black" data-animation="fadein">
+    <figure class="col-span-12 md:col-span-6 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
     </figure>
 
-    <figure class="col-span-12 md:col-start-7 md:col-span-6 bg-black" data-animation="fadein">
+    <figure class="col-span-12 md:col-start-7 md:col-span-6 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
     </figure>
   </section>
@@ -73,7 +73,7 @@ permalink: "work/{{ project.slug | slug }}/index.html"
   <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
     {{ textblock("Tech Stack", project.tech.content, true, true) }}
 
-    <figure class="col-span-7 md:col-span-5 bg-black mt-4 md:mt-8" data-animation="fadein">
+    <figure class="col-span-7 md:col-span-5 bg-black mt-4 md:mt-8 overflow-hidden" data-animation="fadein">
       {{ media(project.medias[2].type, project.medias[2].image, project.medias[2].alt, project.medias[2].video) }}
     </figure>
   </section>
@@ -85,19 +85,19 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 {% if project.grid === 'threelarge' %}
 
   <section class="grid-layout p-4 md:p-8 md:pt-96">
-    <figure class="col-span-12 bg-black" data-animation="fadein">
+    <figure class="col-span-12 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
     </figure>
   </section>
 
   <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
-    <figure class="col-span-7 md:col-start-1 md:col-span-4 bg-black" data-animation="fadein">
+    <figure class="col-span-7 md:col-start-1 md:col-span-4 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
     </figure>
   </section>
 
   <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
-    <figure class="col-span-12 md:col-span-8 bg-black" data-animation="fadein">
+    <figure class="col-span-12 md:col-span-8 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[2].type, project.medias[2].image, project.medias[2].alt, project.medias[2].video) }}
     </figure>
   </section>

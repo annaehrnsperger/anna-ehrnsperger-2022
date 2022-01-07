@@ -14,6 +14,7 @@ html {
   line-height: 1;
   -webkit-text-size-adjust: 100%;
   text-underline-offset: 4px;
+  text-decoration-thickness: from-font;
 }
 
 button,

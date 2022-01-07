@@ -37,21 +37,7 @@ export class Header {
     gsap.registerPlugin(ScrollTrigger);
     setTimeout(() => ScrollTrigger.refresh(), 600);
 
-    this.setHeaderPosition();
     this.setColor();
-  }
-
-  setHeaderPosition() {
-    gsap.to(this.container, {
-      top: '66%',
-      scrollTrigger: {
-        trigger: 'body',
-        id: 'nav',
-        scrub: 0.2,
-        start: 100,
-        end: '+=500',
-      },
-    });
   }
 
   setColor() {

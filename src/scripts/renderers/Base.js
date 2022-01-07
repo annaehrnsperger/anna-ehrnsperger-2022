@@ -13,6 +13,7 @@ import { Footer } from '../components/Footer';
 import { ScrollPos } from '../components/ScrollPos';
 import { Story } from '../pages/Story';
 import { Stories } from '../pages/Stories';
+import { Project } from '../pages/Project';
 
 export class Base extends Highway.Renderer {
   onEnter() {
@@ -40,6 +41,7 @@ export class Base extends Highway.Renderer {
        * Pages
        */
       new Frontpage();
+      new Project();
       new Story();
       new Stories();
     }, 100);

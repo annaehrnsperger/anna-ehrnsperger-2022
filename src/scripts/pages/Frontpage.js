@@ -10,7 +10,7 @@ export class Frontpage {
      * Elements
      */
     this.workBtn = select('[data-nav-work]');
-    this.projects = selectAll('[data-transition="project"]');
+    this.projects = selectAll('[data-preview-project]');
     this.intro = {
       container: select('[data-fp-intro-container]'),
       textcontainer: select('[data-introtext]'),
@@ -54,7 +54,7 @@ export class Frontpage {
     this.workBtn.addEventListener('click', this.handleScrollDown);
 
     this.projects.forEach((project) => {
-      const more = select('[data-project-more]', project);
+      const more = project.nextElementSibling;
 
       project.addEventListener('mouseenter', () => {
         gsap.to(more, {

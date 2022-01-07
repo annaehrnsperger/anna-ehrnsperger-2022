@@ -1,5 +1,5 @@
 {% macro textblock(title, content, project = false, threesmall = false, credits = false) %}
-  {% if not threesmall %}<section class="textblock-module grid-layout p-4 py-8 md:p-8 {{ "py-0 textblock-module-project" if project }}">{% endif %}
+  {% if not threesmall %}<section class="textblock-module grid-layout {{ "p-4 md:p-8 py-8" if not project }} {{ "px-4 md:px-8 py-0 textblock-module-project" if project }}">{% endif %}
     {% if title %}
       <p class="pb-4 md:pb-0 md:col-span-2 {{ "col-span-6" if not credits }} {{ "col-span-2" if credits }}">{{ title }}</p>
     {% endif %}

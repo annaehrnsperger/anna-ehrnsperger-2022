@@ -31,19 +31,18 @@
 {% endif %}
 
 
-<div class="grid-layout p-4 md:p-8">
-  <div class="col-span-10 md:col-span-2">
-    <p>Anna Ehrnsperger</p>
+<div class="grid-layout p-4 md:p-8 pb-0">
+  <div class="col-span-10 md:col-span-3 self-end">
+    <a href="/"><span class="hidden md:inline">©{% year %}</span> Anna Ehrnsperger</a>
   </div>
 
-  <div class="col-start-2 col-span-10 md:col-start-5 md:col-span-3">
-    <div class="flex space-x-8 pb-8">
-      <p><a href="https://www.instagram.com/annaehrnsperger/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-      <p><a href="https://twitter.com/annaehrnsperger" target="_blank" rel="noopener noreferrer">Twitter</a></p>
-      <p><a href="https://github.com/annaehrnsperger" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-      <p><a href="mailto:hallo@annaehrnsperger.de">Email</a></p>
-    </div>
-
-    <a class="text-sm" href="/disclaimer">©{% year %} Disclaimer & Privacy Policy</a>
+  <div class="col-start-2 col-span-10 md:col-start-5 md:col-span-6 self-end">
+    <div class="flex flex-col md:flex-row md:space-x-8">
+      <p><a href="/disclaimer">Disclaimer & Privacy Policy</a></p>
+      <div class="flex space-x-4">
+        <p class="md:pl-8 lg:hidden"><a href="https://www.instagram.com/annaehrnsperger/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        <p class="lg:hidden"><a href="mailto:hallo@annaehrnsperger.de">Email</a></p>
+      </div>
+      </div>
   </div>
 </div>
