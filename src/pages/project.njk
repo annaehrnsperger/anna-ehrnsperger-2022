@@ -41,7 +41,7 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 
 {% if project.grid === 'two' %}
   
-  <section class="grid-layout p-4 md:p-8 md:pt-96">
+  <section class="grid-layout p-4 md:p-8 pt-32 md:pt-96">
     <figure class="col-span-12 md:col-span-9 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
     </figure>
@@ -60,12 +60,12 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 
 {% if project.grid === 'threesmall' %}
 
-  <section class="grid-layout p-4 md:p-8 md:pt-96">
+  <section class="grid-layout p-4 md:p-8 pt-32 md:pt-96">
     <figure class="col-span-12 md:col-span-6 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
     </figure>
 
-    <figure class="col-span-12 md:col-start-7 md:col-span-6 bg-black overflow-hidden" data-animation="fadein">
+    <figure class="mt-4 md:mt-0 col-span-12 md:col-start-7 md:col-span-6 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[1].type, project.medias[1].image, project.medias[1].alt, project.medias[1].video) }}
     </figure>
   </section>
@@ -73,7 +73,7 @@ permalink: "work/{{ project.slug | slug }}/index.html"
   <section class="grid-layout p-4 md:p-8 pt-0 md:pt-0">
     {{ textblock("Tech Stack", project.tech.content, true, true) }}
 
-    <figure class="col-span-7 md:col-span-5 bg-black mt-4 md:mt-8 overflow-hidden" data-animation="fadein">
+    <figure class="col-span-9 md:col-span-5 bg-black mt-4 md:mt-0 overflow-hidden" data-animation="fadein">
       {{ media(project.medias[2].type, project.medias[2].image, project.medias[2].alt, project.medias[2].video) }}
     </figure>
   </section>
@@ -84,7 +84,7 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 
 {% if project.grid === 'threelarge' %}
 
-  <section class="grid-layout p-4 md:p-8 md:pt-96">
+  <section class="grid-layout p-4 md:p-8 pt-32 md:pt-96">
     <figure class="col-span-12 bg-black overflow-hidden" data-animation="fadein">
       {{ media(project.medias[0].type, project.medias[0].image, project.medias[0].alt, project.medias[0].video) }}
     </figure>

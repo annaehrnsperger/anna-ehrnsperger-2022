@@ -1,6 +1,8 @@
 {% set nextPost = collections.posts | getNextCollectionItem(page) %}
 {% set firstPost = collections.posts[0] %}
 
+{% set fontcss = "font-sans text-2xl tracking-tighter leading-none md:text-xl md:tracking-tight" %}
+
 
 {% if template === 'frontpage' or template === 'stories' or template === 'about' or template === 'disclaimer' %}
   <div class="hl group">
@@ -15,7 +17,7 @@
 {% endif %}
 
 {% if template === 'project' %}
-  <a class="hl group grid-layout p-4 md:p-8" href="/" data-transition="overview">
+  <a class="{{ fontcss }} group grid-layout p-4 md:p-8" href="/" data-transition="overview">
     <p class="col-span-12">Project</p>
     <p class="col-start-2 col-span-11">overview</p>
     <p class="group-hover:col-start-2 col-span-3">→</p>
@@ -23,7 +25,7 @@
 {% endif %}
 
 {% if template === 'story' %}
-  <a class="hl group grid-layout p-4 md:p-8" href="{{ nextPost.url if nextPost | length !== 0 }} {{ firstPost.url if nextPost | length === 0 }}">
+  <a class="{{ fontcss }} group grid-layout p-4 md:p-8" href="{{ nextPost.url if nextPost | length !== 0 }} {{ firstPost.url if nextPost | length === 0 }}">
     <p class="col-span-12">Next</p>
     <p class="col-start-2 col-span-11">story</p>
     <p class="group-hover:col-start-2 col-span-3">→</p>
@@ -31,13 +33,13 @@
 {% endif %}
 
 
-<div class="grid-layout p-4 md:p-8 pb-0">
-  <div class="col-span-10 md:col-span-3 self-end">
-    <a href="/"><span class="hidden md:inline">©{% year %}</span> Anna Ehrnsperger</a>
+<div class="grid-layout p-4 md:p-8">
+  <div class="col-span-10 pb-4 md:pb-0 md:col-span-3 self-end">
+    <a href="/">Anna Ehrnsperger</a>
   </div>
 
   <div class="col-start-2 col-span-10 md:col-start-5 md:col-span-6 self-end">
-    <div class="flex flex-col md:flex-row md:space-x-8">
+    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
       <p><a href="/disclaimer">Disclaimer & Privacy Policy</a></p>
       <div class="flex space-x-4">
         <p class="md:pl-8 lg:hidden"><a href="https://www.instagram.com/annaehrnsperger/" target="_blank" rel="noopener noreferrer">Instagram</a></p>

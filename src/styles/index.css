@@ -31,7 +31,7 @@ figure video {
 
 .media-left img,
 .media-left video {
-  @apply object-left;
+  @apply object-left-top;
 }
 
 /** 
