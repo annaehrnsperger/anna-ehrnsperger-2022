@@ -7,10 +7,8 @@ import { Header } from '../components/Header';
 import { FadeIn } from '../animations/FadeIn';
 import { Frontpage } from '../pages/Frontpage';
 import { Muxvideo } from '../components/Muxvideo';
-import { PixiSketch } from '../components/Pixi';
 import { Intro } from '../components/Intro';
 import { Footer } from '../components/Footer';
-import { ScrollPos } from '../components/ScrollPos';
 import { Story } from '../pages/Story';
 import { Stories } from '../pages/Stories';
 import { Project } from '../pages/Project';
@@ -28,9 +26,7 @@ export class Base extends Highway.Renderer {
       selectAll('footer').forEach((el) => new Footer(el));
       selectAll('[data-intro]').forEach((el) => new Intro(el));
       selectAll('[data-mux-video]').forEach((el) => new Muxvideo(el));
-      selectAll('[data-pixi-container]').forEach((el) => new PixiSketch(el));
       new Header();
-      new ScrollPos();
 
       /**
        * Animations

@@ -18,23 +18,3 @@
   width: 100%;
   height: 100%;
 }
-
-.sixteen-nine,
-.four-three,
-.square {
-  aspect-ratio: 1;
-}
-
-@media (min-width: 900px) {
-  .sixteen-nine {
-    aspect-ratio: 16 / 9;
-  }
-
-  .four-three {
-    aspect-ratio: 4 / 3;
-  }
-
-  .square {
-    aspect-ratio: 1;
-  }
-}

@@ -121,14 +121,3 @@ p a:hover {
   width: 30px;
   margin-left: -30px;
 }
-
-@media (min-width: 900px) {
-  .textblock-module ul li {
-    margin-left: 15px;
-  }
-
-  .textblock-module ul li::before {
-    width: 15px;
-    margin-left: -15px;
-  }
-}

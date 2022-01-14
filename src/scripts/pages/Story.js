@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { darkMode, select, selectAll } from '../utils/helper';
+import lazySizes from 'lazysizes';
+import { select } from '../utils/helper';
 
 export class Story {
   constructor() {
@@ -48,6 +49,9 @@ export class Story {
           width: '33vw',
           ease: 'power4.out',
           duration: 0.6,
+          onComplete: () => {
+            lazySizes.autoSizer.checkElems();
+          },
         });
       },
 
@@ -58,6 +62,9 @@ export class Story {
           width: '80.5vw',
           ease: 'power4.out',
           duration: 0.6,
+          onComplete: () => {
+            lazySizes.autoSizer.checkElems();
+          },
         });
       },
     });
