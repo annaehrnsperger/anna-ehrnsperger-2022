@@ -1,10 +1,10 @@
 {% macro intro(section) %}
-  <section class="relative {{ "h-[66vh] md:h-[77vh]" if template === 'about' }} {{ "h-[66vh] md:h-[87vh]" if template !== 'about' }}">
-    <div class="font-sans bg-black min-h-[130vh] w-full text-2xl text-white tracking-tighter leading-none absolute z-[-1]" data-intro>
+  <section class="relative {{ "h-[66vh] md:h-[77vh]" if template === 'about' }} {{ "h-[90vh] short:h-[120vh]" if template === 'frontpage' }} {{ "h-[66vh] md:h-[87vh]" if template !== 'about' }}">
+    <div class="font-sans bg-black min-h-[130vh] w-full text-2xl text-white tracking-tighter leading-none absolute {{ "z-[1]" if template === 'frontpage' }} {{ "z-[-1]" if template !== 'frontpage' }}" data-intro>
        {% include section %}
     </div>
 
-    <div class="font-sans min-h-[130vh] w-full text-2xl text-black tracking-tighter leading-none absolute inset-0 z-[-2]">
+    <div class="font-sans min-h-[130vh] w-full text-2xl text-black tracking-tighter leading-none absolute inset-0 {{ "z-[-1]" if template === 'frontpage' }} {{ "z-[-2]" if template !== 'frontpage' }}">
        {% include section %}
     </div>
   </section>

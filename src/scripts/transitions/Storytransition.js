@@ -1,6 +1,6 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
-import { rect, select, selectAll, size } from '../utils/helper';
+import { rect, select, selectAll } from '../utils/helper';
 
 export class Storytransition extends Highway.Transition {
   in({ from, to, done }) {

@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { darkMode, select } from '../utils/helper';
+import { select } from '../utils/helper';
 
 export class Project {
   constructor() {
