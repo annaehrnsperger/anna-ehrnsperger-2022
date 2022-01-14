@@ -43,8 +43,8 @@ export class Projecttransition extends Highway.Transition {
     });
 
     gsap.to(preview, {
-      width: size().width,
-      height: size().height + 10,
+      width: size().width + 10,
+      height: size().height + 100,
       marginLeft: -20,
       y: (top + 10) * -1,
       duration: 0.5,
