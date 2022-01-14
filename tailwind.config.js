@@ -2,6 +2,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+  content: ['./public/**/*.html', './src/**/*.{html,njk}'],
   theme: {
     screens: {
       sm: '640px',
@@ -16,7 +17,6 @@ module.exports = {
       black: 'var(--black)',
       white: 'var(--white)',
       gray: 'var(--gray)',
-      lightgray: 'var(--lightgray)',
     },
     fontFamily: {
       sans: ['Suisse', ...defaultTheme.fontFamily.sans],
@@ -24,8 +24,7 @@ module.exports = {
       semi: ['Suisse Semi Bold', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
-      sm: '1.4rem',
-      base: 'clamp(1.6rem, 3vw, 1.8rem)',
+      base: 'clamp(1.5rem, 3vw, 1.8rem)',
       lg: 'clamp(3rem, 4vw, 4rem)',
       xl: 'clamp(3rem, 7vw, 10.5rem)',
       '2xl': 'clamp(4.6rem, 9vw, 13.5rem)',
@@ -83,7 +82,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  mode: 'jit',
   plugins: [],
-  purge: ['./public/**/*.html', './src/**/*.{html,njk}'],
 };

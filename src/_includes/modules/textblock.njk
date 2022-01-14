@@ -5,7 +5,7 @@
     {% endif %}
 
     {% if content %}
-      <div class="{{ "col-start-2 col-span-9" if not credits }} {{ "col-start-3 col-span-5" if credits }} md:col-start-5 md:col-span-5 lg:col-start-5 lg:col-span-3">{{ content | richtext | safe }}</div>
+      <div class="col-span-9 {{ "col-start-2" if not credits }} {{ "col-start-3" if credits }} md:col-start-5 md:col-span-5 lg:col-start-5 lg:col-span-3">{{ content | richtext | safe }}</div>
     {% endif %}
   {% if not threesmall %}</section>{% endif %}
 {% endmacro %}

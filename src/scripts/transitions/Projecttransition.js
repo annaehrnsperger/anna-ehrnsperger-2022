@@ -1,6 +1,6 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
-import { darkMode, rect, select, size } from '../utils/helper';
+import { rect, select, size } from '../utils/helper';
 
 export class Projecttransition extends Highway.Transition {
   in({ from, done }) {
@@ -42,19 +42,15 @@ export class Projecttransition extends Highway.Transition {
       ease: 'power4.inOut',
     });
 
-    // darkMode(0.3);
-
     gsap.to(preview, {
       width: size().width,
-      height: '100vh',
+      height: size().height + 10,
       marginLeft: -20,
-      y: top * -1,
+      y: (top + 10) * -1,
       duration: 0.5,
       ease: 'power4.inOut',
       delay: 0.15,
-      onComplete: () => {
-        done();
-      },
+      onComplete: done,
     });
   }
 }

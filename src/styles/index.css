@@ -110,10 +110,6 @@ p a:hover {
   @apply no-underline;
 }
 
-.textblock-module code {
-  @apply bg-lightgray rounded-[3px];
-}
-
 .textblock-module ul li {
   margin-left: 30px;
   display: block;
