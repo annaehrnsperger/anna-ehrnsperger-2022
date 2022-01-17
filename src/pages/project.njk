@@ -18,14 +18,14 @@ permalink: "work/{{ project.slug | slug }}/index.html"
 
 
 
-<section class="relative h-[90vh] overflow-hidden">
+<section class="relative h-[90vh]">
   <a class="h-[90vh] w-full absolute inset-0 group" href="{{ project.url }}" target="_blank" rel="noopener noreferrer" aria-label="visit website" data-visit-website></a>
 
-  <div class="h-[130vh] w-full hl text-white bg-black absolute z-[-1]" data-intro>
+  <div class="h-[130vh] w-full hl text-white bg-black absolute z-[-1] overflow-hidden" data-intro>
     {{ projectintro(false) }}
   </div>
 
-  <div class="h-[130vh] w-full hl text-black bg-white absolute inset-0 z-[-2]">
+  <div class="h-[130vh] w-full hl text-black bg-white absolute inset-0 z-[-2] overflow-hidden">
     {{ projectintro(true) }}
   </div>
 </section>
