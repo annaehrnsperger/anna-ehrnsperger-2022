@@ -21,7 +21,6 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Suisse', ...defaultTheme.fontFamily.sans],
-      bold: ['Suisse Bold', ...defaultTheme.fontFamily.sans],
       semi: ['Suisse Semi Bold', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {

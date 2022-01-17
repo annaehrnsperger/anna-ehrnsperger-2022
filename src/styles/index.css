@@ -93,7 +93,7 @@ figure video {
 }
 
 strong {
-  @apply font-bold font-normal;
+  @apply font-normal;
 }
 
 article a,
