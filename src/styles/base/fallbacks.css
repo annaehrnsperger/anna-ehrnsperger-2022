@@ -1,0 +1,49 @@
+@supports not (
+  (aspect-ratio: 16 / 9) or (aspect-ratio: 1) or (aspect-ratio: 4 / 3)
+) {
+  .fallback-aspect {
+    width: 100%;
+  }
+
+  .fallback-aspect-square {
+    height: 25px;
+  }
+
+  .fallback-aspect-project {
+    min-width: 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  @supports not (
+    (aspect-ratio: 16 / 9) or (aspect-ratio: 1) or (aspect-ratio: 4 / 3)
+  ) {
+    .fallback-aspect {
+      width: 50%;
+    }
+
+    .fallback-aspect-square {
+      height: 70px;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  @supports not (
+    (aspect-ratio: 16 / 9) or (aspect-ratio: 1) or (aspect-ratio: 4 / 3)
+  ) {
+    .fallback-aspect-square {
+      height: 100px;
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  @supports not (
+    (aspect-ratio: 16 / 9) or (aspect-ratio: 1) or (aspect-ratio: 4 / 3)
+  ) {
+    .fallback-aspect-square {
+      height: 150px;
+    }
+  }
+}

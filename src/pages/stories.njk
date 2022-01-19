@@ -13,7 +13,7 @@ slug: stories
 <section>
   {% for story in stories.stories | reverse %}
     <a href="/stories/{{ story.slug.current }}" class="story-thumbnail grid-layout p-4 md:p-8 text-secondary pb-12 sm:pb-24 md:pb-36 lg:pb-56" data-transition="story">
-      <figure class="md:w-[85%] col-start-1 col-span-1 bg-secondary aspect-square translate-y-[11%] md:translate-y-[12%] lg:translate-y-[10%] xl:translate-y-[7%]" data-preview-storyimg>
+      <figure class="md:w-[85%] col-start-1 col-span-1 bg-secondary aspect-square fallback-aspect-square translate-y-[11%] md:translate-y-[12%] lg:translate-y-[10%] xl:translate-y-[7%]" data-preview-storyimg>
         {{ media(story.media.type, story.media.image, story.media.alt, story.media.video) }}
       </figure>
 
