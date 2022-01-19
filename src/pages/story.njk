@@ -6,7 +6,7 @@ pagination:
   addAllPagesToCollections: true
 tags: posts
 eleventyComputed:
-  pageTitle: "{{ post.title }}"
+  pageTitle: "{{ post.title | safe }}"
 template: story
 permalink: "stories/{{ post.slug | slug }}/index.html"
 ---
