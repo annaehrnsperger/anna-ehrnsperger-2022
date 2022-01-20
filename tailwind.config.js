@@ -24,10 +24,10 @@ module.exports = {
       semi: ['Suisse Semi Bold', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
-      base: 'clamp(1.5rem, 3vw, 1.8rem)',
-      lg: 'clamp(3rem, 4vw, 4rem)',
-      xl: 'clamp(3rem, 7vw, 10.5rem)',
-      '2xl': 'clamp(4.6rem, 9vw, 13.5rem)',
+      base: 'var(--base)',
+      lg: 'var(--lg)',
+      xl: 'var(--xl)',
+      '2xl': 'var(--2xl)',
     },
     lineHeight: {
       none: '0.98',
